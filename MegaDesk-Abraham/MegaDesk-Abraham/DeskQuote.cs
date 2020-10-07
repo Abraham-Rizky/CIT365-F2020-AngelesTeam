@@ -95,57 +95,9 @@ namespace MegaDesk_Abraham
             if (index == 0)
             {
                 return desk.ShippingCost = 0;
-            }
-            else if (index == 1)
-            {
-                if(area < 1000)
-                {
-                    return desk.ShippingCost = GetRushOrder(index-1, areaIndex);
-                }
-                else if (area > 1000 && area < 2000)
-                {
-                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
-                }
-                else
-                {
-                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
-
-                }
-            }
-            else if( index == 2)
-            {
-                if (area < 1000)
-                {
-                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
-
-                }
-                else if (area > 1000 && area < 2000)
-                {
-                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
-                }
-                else
-                {
-                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
-                }
-            }
-            else if(index == 3)
-            {
-                if (area < 1000)
-                {
-                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
-
-                }
-                else if (area > 1000 && area < 2000)
-                {
-                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
-                }
-                else
-                {
-                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
-                }
             } else
             {
-                return desk.ShippingCost = shippingCost;
+                return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
             }
         }
 
