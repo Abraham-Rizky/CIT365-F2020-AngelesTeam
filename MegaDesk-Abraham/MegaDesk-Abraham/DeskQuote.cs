@@ -149,14 +149,20 @@ namespace MegaDesk_Abraham
 
 
 
-        public string GetRushOrder()
+        public string GetRushOrder(int rushOption, int areaSize)
         {
             string currentDirectory = Directory.GetCurrentDirectory();
             string dataFolder = Path.GetDirectoryName(currentDirectory);
             string goUpOneFolder = Path.GetDirectoryName(dataFolder);
             string fileLocation = $"{goUpOneFolder}/data/rushOrderPrices.txt";
-            string[] lines = File.ReadLines(fileLocation).ToArray();
-            string output = lines[0];
+            string[] fetchFromFileArray = File.ReadLines(fileLocation).ToArray();
+            string[,] getRushOrderArray= new string[3,3];
+            
+            for (int i=0; i<fetchFromFileArray.Length; i++)
+            {
+                getRushOrderArray[i/3, i%3] = fetchFromFileArray[i];
+            }
+            string output = getRushOrderArray[rushOption, areaSize];
             return output;
         }
     }
