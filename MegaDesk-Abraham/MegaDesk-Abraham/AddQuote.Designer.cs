@@ -192,6 +192,7 @@
             this.currentDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentDate.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.currentDate.Location = new System.Drawing.Point(221, 398);
+            this.currentDate.MaximumSize = new System.Drawing.Size(300, 0);
             this.currentDate.Name = "currentDate";
             this.currentDate.Size = new System.Drawing.Size(108, 21);
             this.currentDate.TabIndex = 18;

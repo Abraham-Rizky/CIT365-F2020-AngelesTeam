@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MegaDesk_Abraham
 {
@@ -144,6 +145,19 @@ namespace MegaDesk_Abraham
         {
             String date = DateTime.Now.ToString("dd MMMM yyyy");
             return date;
+        }
+
+
+
+        public string GetRushOrder()
+        {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string dataFolder = Path.GetDirectoryName(currentDirectory);
+            string goUpOneFolder = Path.GetDirectoryName(dataFolder);
+            string fileLocation = $"{goUpOneFolder}/data/rushOrderPrices.txt";
+            string[] lines = File.ReadLines(fileLocation).ToArray();
+            string output = lines[0];
+            return output;
         }
     }
 }

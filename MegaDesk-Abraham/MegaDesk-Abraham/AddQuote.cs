@@ -22,6 +22,7 @@ namespace MegaDesk_Abraham
             InitializeComponent();
             // Show today's date
             currentDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
+            //currentDate.Text = deskquote.GetRushOrder();
         }
 
         private void returnToMainMenu_Click(object sender, EventArgs e)
