@@ -22,7 +22,7 @@ namespace MegaDesk_Abraham
             InitializeComponent();
             // Show today's date
             currentDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
-            //currentDate.Text = deskquote.GetRushOrder();
+            //currentDate.Text = Convert.ToString (drawerBox.SelectedIndex);
         }
 
         private void returnToMainMenu_Click(object sender, EventArgs e)
@@ -289,6 +289,7 @@ namespace MegaDesk_Abraham
                 desk.Area = desk.Width * desk.Depth;
                 desk.MaterialNotEmpty = materialBox.SelectedIndex;
                 desk.ShippingNotEmpty = shippingBox.SelectedIndex;
+                desk.ShippingIndex = shippingBox.SelectedIndex;
 
                 if (desk.MaterialNotEmpty == -1 || desk.ShippingNotEmpty == -1)
                 {

@@ -16,6 +16,7 @@ namespace MegaDesk_Abraham
         public decimal materialCost;
         public decimal shippingCost;
         public decimal totalPrice;
+        public int areaIndex;
         public const decimal BASE_PRICE = 200.00M;
         public const int DRAWER_RATE = 50;
 
@@ -77,62 +78,70 @@ namespace MegaDesk_Abraham
             area = width * depth;
             desk.Area = area;
             
+            if (area < 1000)
+            {
+                areaIndex = 0;
+            }
+            else if (area > 1000 && area < 2000)
+            {
+                areaIndex = 1;
+            }
+            else
+            {
+                areaIndex = 2;
+            }
+
+
             if (index == 0)
             {
-                return desk.ShippingCost = 0.00M;
+                return desk.ShippingCost = 0;
             }
             else if (index == 1)
             {
                 if(area < 1000)
                 {
-                    shippingCost = 60.00M;
-                    return desk.ShippingCost = shippingCost;
+                    return desk.ShippingCost = GetRushOrder(index-1, areaIndex);
                 }
                 else if (area > 1000 && area < 2000)
                 {
-                    shippingCost = 70.00M;
-                    return desk.ShippingCost = shippingCost;
+                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
                 }
                 else
                 {
-                    shippingCost = 80.00M;
-                    return desk.ShippingCost = shippingCost;
+                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
+
                 }
             }
             else if( index == 2)
             {
                 if (area < 1000)
                 {
-                    shippingCost = 40.00M;
-                    return desk.ShippingCost = shippingCost;
+                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
+
                 }
                 else if (area > 1000 && area < 2000)
                 {
-                    shippingCost = 50.00M;
-                    return desk.ShippingCost = shippingCost;
+                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
                 }
                 else
                 {
-                    shippingCost = 60.00M;
-                    return desk.ShippingCost = shippingCost;
+                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
                 }
             }
             else if(index == 3)
             {
                 if (area < 1000)
                 {
-                    shippingCost = 30.00M;
-                    return desk.ShippingCost = shippingCost;
+                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
+
                 }
                 else if (area > 1000 && area < 2000)
                 {
-                    shippingCost = 35.00M;
-                    return desk.ShippingCost = shippingCost;
+                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
                 }
                 else
                 {
-                    shippingCost = 40.00M;
-                    return desk.ShippingCost = shippingCost;
+                    return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
                 }
             } else
             {
@@ -149,12 +158,15 @@ namespace MegaDesk_Abraham
 
 
 
-        public string GetRushOrder(int rushOption, int areaSize)
+        public decimal GetRushOrder(int rushOption, int areaIndex)
         {
+            // Find current directory and list our file location inside data folder
             string currentDirectory = Directory.GetCurrentDirectory();
             string dataFolder = Path.GetDirectoryName(currentDirectory);
             string goUpOneFolder = Path.GetDirectoryName(dataFolder);
             string fileLocation = $"{goUpOneFolder}/data/rushOrderPrices.txt";
+
+            // Fetch data into 1D array then convert to 2D array
             string[] fetchFromFileArray = File.ReadLines(fileLocation).ToArray();
             string[,] getRushOrderArray= new string[3,3];
             
@@ -162,7 +174,8 @@ namespace MegaDesk_Abraham
             {
                 getRushOrderArray[i/3, i%3] = fetchFromFileArray[i];
             }
-            string output = getRushOrderArray[rushOption, areaSize];
+
+            decimal output = Convert.ToDecimal ( getRushOrderArray[rushOption, areaIndex] );
             return output;
         }
     }

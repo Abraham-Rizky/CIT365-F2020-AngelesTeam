@@ -27,6 +27,7 @@ namespace MegaDesk_Abraham
         public decimal Area { get; set; }
         public string Date { get; set; }
         public decimal OversizeCost { get; set; }
+        public int ShippingIndex { get; set; }
         public int MaterialNotEmpty { get; set; }
         public int ShippingNotEmpty { get; set; }
         public int minWidth { get {return MinWidth; } }
