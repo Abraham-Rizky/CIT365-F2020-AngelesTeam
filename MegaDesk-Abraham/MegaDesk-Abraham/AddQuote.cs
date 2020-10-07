@@ -264,10 +264,11 @@ namespace MegaDesk_Abraham
         // Add default index value to material text box to show command to select
         private void AddQuote_Load(object sender, EventArgs e)
         {
-            materialBox.SelectedIndex = -1;
             //shippingBox.SelectedIndex = 0;
             List<DesktopMaterial> comboList = Enum.GetValues(typeof(DesktopMaterial)).Cast<DesktopMaterial>().ToList();
             materialBox.DataSource = comboList;
+            materialBox.SelectedIndex = -1;
+
         }
 
         public void viewQuoteButton_Click(object sender, EventArgs e)

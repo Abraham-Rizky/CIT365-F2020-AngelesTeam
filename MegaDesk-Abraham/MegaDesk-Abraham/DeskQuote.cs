@@ -14,8 +14,6 @@ namespace MegaDesk_Abraham
         public decimal oversizeCost { get; set; }
         public decimal drawerCost;
         public decimal materialCost;
-        public decimal shippingCost;
-        public decimal totalPrice;
         public int areaIndex;
         public const decimal BASE_PRICE = 200.00M;
         public const int DRAWER_RATE = 50;
