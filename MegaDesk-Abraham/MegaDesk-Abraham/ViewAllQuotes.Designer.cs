@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.returnToMainMenu = new System.Windows.Forms.Button();
+            this.dgvAllQuotes = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllQuotes)).BeginInit();
             this.SuspendLayout();
             // 
             // returnToMainMenu
@@ -41,15 +43,26 @@
             this.returnToMainMenu.UseVisualStyleBackColor = true;
             this.returnToMainMenu.Click += new System.EventHandler(this.returnToMainMenu_Click);
             // 
+            // dgvAllQuotes
+            // 
+            this.dgvAllQuotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllQuotes.Location = new System.Drawing.Point(12, 12);
+            this.dgvAllQuotes.Name = "dgvAllQuotes";
+            this.dgvAllQuotes.Size = new System.Drawing.Size(776, 377);
+            this.dgvAllQuotes.TabIndex = 2;
+            // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvAllQuotes);
             this.Controls.Add(this.returnToMainMenu);
             this.Name = "ViewAllQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View All Quotes";
+            this.Load += new System.EventHandler(this.ViewAllQuotes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllQuotes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -57,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Button returnToMainMenu;
+        private System.Windows.Forms.DataGridView dgvAllQuotes;
     }
 }
