@@ -22,7 +22,7 @@ namespace MegaDesk_Abraham
             InitializeComponent();
             // Show today's date
             currentDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
-            //currentDate.Text = Convert.ToString (drawerBox.SelectedIndex);
+            //currentDate.Text = Convert.ToString(materialBox.SelectedIndex);
         }
 
         private void returnToMainMenu_Click(object sender, EventArgs e)
@@ -213,9 +213,9 @@ namespace MegaDesk_Abraham
         /* -----------------------------------------------------*/
 
         // Validate material
-        public void validateMaterial(string input)
+        public void ValidateMaterial(int input)
         {
-            if (materialBox.SelectedIndex < 1 || materialBox.SelectedIndex > 5 || materialBox.SelectedIndex == -1 || String.IsNullOrEmpty(input))
+            if (input < 0 || input > 4 || input == -1)
             {
                 errorLabel.Text = "Please select one of the options below";
                 materialBox.BackColor = Color.Tomato;
@@ -231,8 +231,8 @@ namespace MegaDesk_Abraham
         private void materialBox_Validating(object sender, CancelEventArgs e)
         {
             materialBox.BackColor = default(Color);
-            string value = materialBox.Text;
-            validateMaterial(value);
+            int value = materialBox.SelectedIndex;
+            ValidateMaterial(value);
         }
 
         /* -----------------------------------------------------*/
@@ -266,6 +266,8 @@ namespace MegaDesk_Abraham
         {
             materialBox.SelectedIndex = -1;
             //shippingBox.SelectedIndex = 0;
+            List<DesktopMaterial> comboList = Enum.GetValues(typeof(DesktopMaterial)).Cast<DesktopMaterial>().ToList();
+            materialBox.DataSource = comboList;
         }
 
         public void viewQuoteButton_Click(object sender, EventArgs e)
@@ -279,7 +281,7 @@ namespace MegaDesk_Abraham
                 desk.Width = Convert.ToInt32(widthBox.Text);
                 desk.Depth = Convert.ToInt32(depthBox.Text);
                 desk.NumberOfDrawers = Convert.ToInt32(drawerBox.Text);
-                desk.SurfaceMaterial = (DesktopMaterial)materialBox.SelectedIndex - 1;
+                desk.SurfaceMaterial = (DesktopMaterial)materialBox.SelectedIndex;
                 desk.CustomerName = customerNameBox.Text;
                 desk.ShippingCost = quote.CalcShipping(Convert.ToInt32(shippingBox.SelectedIndex), desk.Width, desk.Depth);
                 desk.Date = quote.ShowDate();

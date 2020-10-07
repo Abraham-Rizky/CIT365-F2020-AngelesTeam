@@ -50,19 +50,19 @@ namespace MegaDesk_Abraham
            
             switch (index)
             {
-                case 1:
+                case 0:
                     materialCost = 200.00M;
                     return materialCost;
-                case 2:
+                case 1:
                     materialCost = 100.00M;
                     return materialCost;
-                case 3:
+                case 2:
                     materialCost = 50.00M;
                     return materialCost;
-                case 4:
+                case 3:
                     materialCost = 300.00M;
                     return materialCost;
-                case 5:
+                case 4:
                     materialCost = 125.00M;
                     return materialCost;
                 default:

@@ -173,13 +173,6 @@
             // 
             this.materialBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialBox.FormattingEnabled = true;
-            this.materialBox.Items.AddRange(new object[] {
-            "Select one item below",
-            "Oak",
-            "Laminate",
-            "Pine",
-            "Rosewood",
-            "Veneer"});
             this.materialBox.Location = new System.Drawing.Point(225, 251);
             this.materialBox.Name = "materialBox";
             this.materialBox.Size = new System.Drawing.Size(297, 29);

@@ -26,7 +26,7 @@ namespace MegaDesk_Abraham
             oversizeCostLabel.Text = "$ " + Convert.ToString(desk.OversizeCost + ".00");
             dateLabel.Text = desk.Date;
             totalPriceLabel.Text = "$ " + Convert.ToString(desk.OversizeCost + desk.basePrice + desk.DrawerCost + desk.ShippingCost + desk.MaterialCost);
-            //dateLabel.Text = Convert.ToString (desk.Area);
+            //dateLabel.Text = Convert.ToString (desk.MaterialNotEmpty);
         }
 
         private void returnToMainMenu_Click(object sender, EventArgs e)
