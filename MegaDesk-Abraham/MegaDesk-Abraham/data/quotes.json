@@ -1,0 +1,121 @@
+[
+  {
+    "customer_name": "Lester Testcase",
+    "rush_order_days": 4,
+    "quote_date": "2020-10-07T21:15:40",
+    "quote_price": 0,
+    "desk": {
+      "width": 96,
+      "depth": 48,
+      "drawers": 7,
+      "material": "rosewood"
+    }
+  },
+  {
+    "customer_name": "Joe Josephson",
+    "rush_order_days": 0,
+    "quote_date": "2020-10-05T13:15:40",
+    "desk": {
+      "width": 24,
+      "depth": 12,
+      "drawers": 0,
+      "material": "laminate"
+    }
+  },
+  {
+    "customer_name": "Mortimer Frothingham",
+    "rush_order_days": 3,
+    "quote_date": "2020-10-01T12:30:20",
+    "quote_price": 0,
+    "desk": {
+      "width": 84,
+      "depth": 36,
+      "drawers": 6,
+      "material": "oak"
+    }
+  },
+  {
+    "customer_name": "Patrick Star",
+    "rush_order_days": 1,
+    "quote_date": "2020-09-30T10:15:40",
+    "quote_price": 0,
+    "desk": {
+      "width": 74,
+      "depth": 24,
+      "drawers": 2,
+      "material": "pine"
+    }
+  },
+  {
+    "customer_name": "I am Groot",
+    "rush_order_days": 2,
+    "quote_date": "2020-08-05T14:25:40",
+    "quote_price": 0,
+    "desk": {
+      "width": 36,
+      "depth": 36,
+      "drawers": 1,
+      "material": "veneer"
+    }
+  },
+  {
+    "customer_name": "Tony Stark",
+    "rush_order_days": 5,
+    "quote_date": "2020-08-31T14:30:40",
+    "quote_price": 0,
+    "desk": {
+      "width": 50,
+      "depth": 24,
+      "drawers": 6,
+      "material": "rosewood"
+    }
+  },
+  {
+    "customer_name": "Mister Twister",
+    "rush_order_days": 3,
+    "quote_date": "2020-10-01T14:25:40",
+    "quote_price": 0,
+    "desk": {
+      "width": 60,
+      "depth": 30,
+      "drawers": 2,
+      "material": "pine"
+    }
+  },
+  {
+    "customer_name": "Cosmo Kramer",
+    "rush_order_days": 0,
+    "quote_date": "2020-09-05T14:25:40",
+    "quote_price": 0,
+    "desk": {
+      "width": 75,
+      "depth": 40,
+      "drawers": 3,
+      "material": "laminate"
+    }
+  },
+  {
+    "customer_name": "Bob Sacamano",
+    "rush_order_days": 4,
+    "quote_date": "2020-10-02T14:25:40",
+    "quote_price": 0,
+    "desk": {
+      "width": 80,
+      "depth": 38,
+      "drawers": 6,
+      "material": "veneer"
+    }
+  },
+  {
+    "customer_name": "Jackie Childs",
+    "rush_order_days": 1,
+    "quote_date": "2020-09-25T14:25:40",
+    "quote_price": 0,
+    "desk": {
+      "width": 60,
+      "height": 40,
+      "drawers": 5,
+      "material": "oak"
+    }
+  }
+]
