@@ -8,122 +8,83 @@
     "Date": "2020-10-07T21:15:40"
   },
   {
-    "customer_name": "Lester Testcase",
-    "rush_order_days": 4,
-    "quote_date": "2020-10-07T21:15:40",
-    "quote_price": 0,
-    "desk": {
-      "width": 96,
-      "depth": 48,
-      "drawers": 7,
-      "material": "rosewood"
-    }
+    "CustomerName": "Lester Testcase",
+    "Depth": 48,
+    "Width": 96,
+    "NumberOfDrawers": 7,
+    "SurfaceMaterial": 1,
+    "Date": "2020-10-07T21:15:40"
   },
   {
-    "customer_name": "Joe Josephson",
-    "rush_order_days": 0,
-    "quote_date": "2020-10-05T13:15:40",
-    "desk": {
-      "width": 24,
-      "depth": 12,
-      "drawers": 0,
-      "material": "laminate"
-    }
+    "CustomerName": "Joe Josephson",
+    "Depth": 12,
+    "Width": 24,
+    "NumberOfDrawers": 0,
+    "SurfaceMaterial": 1,
+    "Date": "2020-10-05T13:15:40"
   },
   {
-    "customer_name": "Mortimer Frothingham",
-    "rush_order_days": 3,
-    "quote_date": "2020-10-01T12:30:20",
-    "quote_price": 0,
-    "desk": {
-      "width": 84,
-      "depth": 36,
-      "drawers": 6,
-      "material": "oak"
-    }
+    "CustomerName": "Mortimer Frothingham",
+    "Depth": 36,
+    "Width": 84,
+    "NumberOfDrawers": 6,
+    "SurfaceMaterial": 2,
+    "Date": "2020-10-01T12:30:20"
   },
   {
-    "customer_name": "Patrick Star",
-    "rush_order_days": 1,
-    "quote_date": "2020-09-30T10:15:40",
-    "quote_price": 0,
-    "desk": {
-      "width": 74,
-      "depth": 24,
-      "drawers": 2,
-      "material": "pine"
-    }
+    "CustomerName": "Patrick Star",
+    "Depth": 24,
+    "Width": 74,
+    "NumberOfDrawers": 2,
+    "SurfaceMaterial": 2,
+    "Date": "2020-09-30T10:15:40"
   },
   {
-    "customer_name": "I am Groot",
-    "rush_order_days": 2,
-    "quote_date": "2020-08-05T14:25:40",
-    "quote_price": 0,
-    "desk": {
-      "width": 36,
-      "depth": 36,
-      "drawers": 1,
-      "material": "veneer"
-    }
+    "CustomerName": "I am Groot",
+    "Depth": 36,
+    "Width": 36,
+    "NumberOfDrawers": 1,
+    "SurfaceMaterial": 3,
+    "Date": "2020-08-05T14:25:40"
   },
   {
-    "customer_name": "Tony Stark",
-    "rush_order_days": 5,
-    "quote_date": "2020-08-31T14:30:40",
-    "quote_price": 0,
-    "desk": {
-      "width": 50,
-      "depth": 24,
-      "drawers": 6,
-      "material": "rosewood"
-    }
+    "CustomerName": "Tony Stark",
+    "Depth": 24,
+    "Width": 50,
+    "NumberOfDrawers": 6,
+    "SurfaceMaterial": 3,
+    "Date": "2020-08-31T14:30:40"
   },
   {
-    "customer_name": "Mister Twister",
-    "rush_order_days": 3,
-    "quote_date": "2020-10-01T14:25:40",
-    "quote_price": 0,
-    "desk": {
-      "width": 60,
-      "depth": 30,
-      "drawers": 2,
-      "material": "pine"
-    }
+    "CustomerName": "Mister Twister",
+    "Depth": 30,
+    "Width": 60,
+    "NumberOfDrawers": 2,
+    "SurfaceMaterial": 4,
+    "Date": "2020-10-01T14:25:40"
   },
   {
-    "customer_name": "Cosmo Kramer",
-    "rush_order_days": 0,
-    "quote_date": "2020-09-05T14:25:40",
-    "quote_price": 0,
-    "desk": {
-      "width": 75,
-      "depth": 40,
-      "drawers": 3,
-      "material": "laminate"
-    }
+    "CustomerName": "Cosmo Kramer",
+    "Depth": 40,
+    "Width": 75,
+    "NumberOfDrawers": 4,
+    "SurfaceMaterial": "laminate",
+    "Date": "2020-09-05T14:25:40"
   },
   {
-    "customer_name": "Bob Sacamano",
-    "rush_order_days": 4,
-    "quote_date": "2020-10-02T14:25:40",
-    "quote_price": 0,
-    "desk": {
-      "width": 80,
-      "depth": 38,
-      "drawers": 6,
-      "material": "veneer"
-    }
+    "CustomerName": "Bob Sacamano",
+    "Depth": 38,
+    "Width": 80,
+    "NumberOfDrawers": 6,
+    "SurfaceMaterial": 5,
+    "Date": "2020-10-02T14:25:40"
   },
   {
-    "customer_name": "Jackie Childs",
-    "rush_order_days": 1,
-    "quote_date": "2020-09-25T14:25:40",
-    "quote_price": 0,
-    "desk": {
-      "width": 60,
-      "height": 40,
-      "drawers": 5,
-      "material": "oak"
-    }
+    "CustomerName": "Jackie Childs",
+    "Depth": 40,
+    "Width": 60,
+    "NumberOfDrawers": 5,
+    "SurfaceMaterial": 5,
+    "Date": "2020-09-25T14:25:40"
   }
 ]
