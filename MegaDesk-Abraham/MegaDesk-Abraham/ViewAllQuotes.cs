@@ -25,8 +25,8 @@ namespace MegaDesk_Abraham
 
         private void PopulateDataGridView() {
 
-            /*Use a stream reader to open a stream from the json file.
-            StreamReader jsonStream = new StreamReader("file.json");
+            //Use a stream reader to open a stream from the json file.
+            StreamReader jsonStream = new StreamReader("../../data/quotes.json");
 
             //Store the entire file in one string.
             string rawJson = jsonStream.ReadToEnd();
@@ -43,7 +43,7 @@ namespace MegaDesk_Abraham
                     , desk.SurfaceMaterial.ToString()
                     , desk.Area.ToString()
                     , desk.MaterialCost.ToString()
-                    , desk.OversizeCost.ToString()
+                    , desk.OversizeCost.ToString() 
                     , desk.NumberOfDrawers.ToString()
                     , desk.DrawerCost.ToString()
                     , desk.ShippingCost.ToString()
@@ -52,7 +52,7 @@ namespace MegaDesk_Abraham
                 dgvAllQuotes.Rows.Add(row);
             }
 
-            //Once data loading works, work on formatting*/
+            //Once data loading works, work on formatting
         }
 
         private void returnToMainMenu_Click(object sender, EventArgs e)

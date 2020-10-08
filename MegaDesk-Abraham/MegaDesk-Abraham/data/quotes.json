@@ -1,5 +1,13 @@
 [
   {
+    "CustomerName": "Me and Myself",
+    "Depth": 96,
+    "Width": 48,
+    "NumberOfDrawers": 2,
+    "SurfaceMaterial": 1,
+    "Date": "2020-10-07T21:15:40"
+  },
+  {
     "customer_name": "Lester Testcase",
     "rush_order_days": 4,
     "quote_date": "2020-10-07T21:15:40",

@@ -284,13 +284,13 @@ namespace MegaDesk_Abraham
                 desk.NumberOfDrawers = Convert.ToInt32(drawerBox.Text);
                 desk.SurfaceMaterial = (DesktopMaterial)materialBox.SelectedIndex;
                 desk.CustomerName = customerNameBox.Text;
-                desk.ShippingCost = quote.CalcShipping(Convert.ToInt32(shippingBox.SelectedIndex), desk.Width, desk.Depth);
+                //desk.ShippingCost = quote.CalcShipping(Convert.ToInt32(shippingBox.SelectedIndex), desk.Width, desk.Depth); //Property?
                 desk.Date = quote.ShowDate();
-                desk.OversizeCost = quote.CalcOversizeCost(desk.Width, desk.Depth);
-                desk.DrawerCost = quote.CalcDrawerCost(desk.NumberOfDrawers);
-                desk.MaterialCost = quote.CalcMaterialCost(Convert.ToInt32(materialBox.SelectedIndex));
-                desk.Area = desk.Width * desk.Depth;
-                desk.MaterialNotEmpty = materialBox.SelectedIndex;
+                //desk.OversizeCost = quote.CalcOversizeCost(desk.Width, desk.Depth); //Property?
+                //desk.DrawerCost = quote.CalcDrawerCost(desk.NumberOfDrawers); //Property?
+                //desk.MaterialCost = quote.CalcMaterialCost(Convert.ToInt32(materialBox.SelectedIndex)); //Property?
+                //desk.Area = desk.Width * desk.Depth; //Property?
+                desk.MaterialNotEmpty = materialBox.SelectedIndex; 
                 desk.ShippingNotEmpty = shippingBox.SelectedIndex;
                 desk.ShippingIndex = shippingBox.SelectedIndex;
 

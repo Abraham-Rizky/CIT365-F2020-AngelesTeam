@@ -18,10 +18,10 @@ namespace MegaDesk_Abraham
         public const decimal BASE_PRICE = 200.00M;
         public const int DRAWER_RATE = 50;
 
-        public decimal CalcOversizeCost(decimal width, decimal depth)
+        /*public decimal CalcOversizeCost(decimal width, decimal depth)
         {
-            Desk desk = new Desk();
-            area = width * depth;
+            //Desk desk = new Desk();
+            //area = width * depth;
             if (area > 1000)
             {
                 oversizeCost = Convert.ToDecimal( area - 1000) ;
@@ -33,17 +33,17 @@ namespace MegaDesk_Abraham
                 oversizeCost = 0;
                 return oversizeCost;
             }
-        }
+        }*/
 
-        public decimal CalcDrawerCost( int numberOfDrawers)
+        /*public decimal CalcDrawerCost( int numberOfDrawers)
         {
             Desk desk = new Desk();
             drawerCost = numberOfDrawers * DRAWER_RATE;
             desk.DrawerCost = drawerCost;
             return desk.DrawerCost;
-        }
+        }*/
 
-        public decimal CalcMaterialCost(int index)
+        /*public decimal CalcMaterialCost(int index)
         {
            
             switch (index)
@@ -68,13 +68,13 @@ namespace MegaDesk_Abraham
                     return materialCost;
             }
 
-        }
+        }*/
 
-        public decimal CalcShipping(int index, decimal width, decimal depth)
+        /*public decimal CalcShipping(int index, decimal width, decimal depth)
         {
-            Desk desk = new Desk();
-            area = width * depth;
-            desk.Area = area;
+            //Desk desk = new Desk();
+            //area = width * depth;
+            //desk.Area = area;
             
             if (area < 1000)
             {
@@ -97,7 +97,7 @@ namespace MegaDesk_Abraham
             {
                 return desk.ShippingCost = GetRushOrder(index - 1, areaIndex);
             }
-        }
+        }*/
 
 
         public string ShowDate()
