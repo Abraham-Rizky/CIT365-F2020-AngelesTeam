@@ -31,12 +31,18 @@ namespace MegaDesk_Abraham
 
             //Using JSON.NET convert the data stored in the string into a list of Desk objects.
             List<Desk> desks = JsonConvert.DeserializeObject<List<Desk>>(rawJson);
+            string materialQuery = materialBox.SelectedItem.ToString();
+
+            //Clear datagrid before populating.
+            dgvSearchQuotes.Rows.Clear();
 
             //Loop through the list of desks. For each desk create a string array for the Desk's data,
             //and the add that array to dgvAllQuotes DataGridView on the ViewAllQuotes form.
             foreach (Desk desk in desks)
             {
-                string[] row = {
+                if (desk.SurfaceMaterial.ToString() == materialQuery)
+                {
+                    string[] row = {
                     desk.CustomerName
                     , desk.Date //Might have to format this
                     , desk.SurfaceMaterial.ToString()
@@ -48,7 +54,8 @@ namespace MegaDesk_Abraham
                     , desk.ShippingCost.ToString()
                     , desk.TotalPrice.ToString()};
 
-                dgvSearchQuotes.Rows.Add(row);
+                    dgvSearchQuotes.Rows.Add(row);
+                }
             }
 
             //Once data loading works, work on formatting
