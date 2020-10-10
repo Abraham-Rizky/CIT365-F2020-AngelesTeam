@@ -57,11 +57,18 @@ namespace MegaDesk_Abraham
                             break;
                         }
                 }
-
-                decimal output = Convert.ToDecimal(getRushOrderArray[ShippingIndex, areaIndex]);
-                return output;
+                if (ShippingIndex == 99)
+                {
+                    return 0;
+                }
+                else
+                {
+                    decimal output = Convert.ToDecimal(getRushOrderArray[ShippingIndex, areaIndex]);
+                    return output;
+                }
             }
         }
+        
         public decimal DrawerCost {
             get { 
                 return 50 * NumberOfDrawers; 
