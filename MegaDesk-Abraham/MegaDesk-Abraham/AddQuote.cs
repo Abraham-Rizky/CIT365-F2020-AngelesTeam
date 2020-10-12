@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -301,13 +303,28 @@ namespace MegaDesk_Abraham
                 }
                 else
                 {
-                    DisplayQuote openDisplayQuote = new DisplayQuote(desk);
-                    openDisplayQuote.Tag = this;
-                    openDisplayQuote.Show(this);
-                    Hide();
+                    try
+                    {
+                        var baseJson = File.ReadAllText("../../data/quotes.json");
+                        List<Desk> quoteToAdd = new List<Desk>() { desk };
+
+                        string updatedJson = AddObjectToJson(baseJson, quoteToAdd);
+
+                        File.WriteAllText("../../data/quotes.json", updatedJson);
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    finally
+                    {
+                        DisplayQuote openDisplayQuote = new DisplayQuote(desk);
+                        openDisplayQuote.Tag = this;
+                        openDisplayQuote.Show(this);
+                        Hide();
+                    }
+                    
                 }
-
-
             }
             catch
             {
@@ -316,5 +333,13 @@ namespace MegaDesk_Abraham
 
 
         }
+
+        private string AddObjectToJson<T>(string json, List<T> objects)
+        {
+            List<T> list = JsonConvert.DeserializeObject<List<T>>(json);
+            list.AddRange(objects);
+            return JsonConvert.SerializeObject(list);
+        }
+
     }
 }
