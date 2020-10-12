@@ -294,12 +294,19 @@ namespace MegaDesk_Abraham
                 //desk.Area = desk.Width * desk.Depth; //Property?
                 desk.MaterialNotEmpty = materialBox.SelectedIndex; 
                 desk.ShippingNotEmpty = shippingBox.SelectedIndex;
-                desk.ShippingIndex = shippingBox.SelectedIndex;
+                if (shippingBox.SelectedIndex == 0)
+                {
+                    desk.ShippingIndex = 99;
+                }
+                else
+                {
+                    desk.ShippingIndex = shippingBox.SelectedIndex - 1;
+                }
+
 
                 if (desk.MaterialNotEmpty == -1 || desk.ShippingNotEmpty == -1)
                 {
                     errorLabel.Text = "Please make sure that all fields are filled or selected!";
-
                 }
                 else
                 {

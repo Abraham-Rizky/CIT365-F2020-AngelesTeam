@@ -49,7 +49,7 @@
             this.returnToMainMenu.Name = "returnToMainMenu";
             this.returnToMainMenu.Size = new System.Drawing.Size(183, 43);
             this.returnToMainMenu.TabIndex = 1;
-            this.returnToMainMenu.Text = "Back to main menu";
+            this.returnToMainMenu.Text = "&Back to main menu";
             this.returnToMainMenu.UseVisualStyleBackColor = true;
             this.returnToMainMenu.Click += new System.EventHandler(this.returnToMainMenu_Click);
             // 
