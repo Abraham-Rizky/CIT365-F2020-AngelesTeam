@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace MegaDesk_Abraham
 {
-    class DeskQuote
+    
+
+    public class DeskQuote
     {
-        public decimal area;
-        public decimal oversizeCost { get; set; }
-        public decimal drawerCost;
-        public decimal materialCost;
-        public int areaIndex;
         public const decimal BASE_PRICE = 200.00M;
         public const int DRAWER_RATE = 50;
 
-       
         public string ShowDate()
         {
             String date = DateTime.Now.ToString("dd MMMM yyyy");

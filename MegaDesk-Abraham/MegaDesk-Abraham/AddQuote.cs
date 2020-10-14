@@ -24,7 +24,6 @@ namespace MegaDesk_Abraham
             InitializeComponent();
             // Show today's date
             currentDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
-            //currentDate.Text = Convert.ToString(materialBox.SelectedIndex);
         }
 
         private void returnToMainMenu_Click(object sender, EventArgs e)
