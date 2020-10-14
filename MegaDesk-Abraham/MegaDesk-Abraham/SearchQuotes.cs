@@ -44,7 +44,7 @@ namespace MegaDesk_Abraham
                 {
                     string[] row = {
                     desk.CustomerName
-                    , desk.Date //Might have to format this
+                    , desk.Date
                     , desk.SurfaceMaterial.ToString()
                     , desk.Area.ToString()
                     , desk.MaterialCost.ToString()
@@ -57,8 +57,6 @@ namespace MegaDesk_Abraham
                     dgvSearchQuotes.Rows.Add(row);
                 }
             }
-
-            //Once data loading works, work on formatting
         }
 
         private void returnToMainMenu_Click(object sender, EventArgs e)
