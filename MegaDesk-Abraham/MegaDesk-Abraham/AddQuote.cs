@@ -29,11 +29,6 @@ namespace MegaDesk_Abraham
 
         private void returnToMainMenu_Click(object sender, EventArgs e)
         {
-            /*
-                MainMenu mainMenu = (MainMenu)this.Tag;
-                mainMenu.Show();
-                Close();
-            */
             MainMenu openMainMenu = new MainMenu();
             openMainMenu.Tag = this;
             openMainMenu.Show(this);
@@ -266,7 +261,6 @@ namespace MegaDesk_Abraham
         // Add default index value to material text box to show command to select
         private void AddQuote_Load(object sender, EventArgs e)
         {
-            //shippingBox.SelectedIndex = 0;
             List<DesktopMaterial> comboList = Enum.GetValues(typeof(DesktopMaterial)).Cast<DesktopMaterial>().ToList();
             materialBox.DataSource = comboList;
             materialBox.SelectedIndex = -1;
@@ -286,12 +280,7 @@ namespace MegaDesk_Abraham
                 desk.NumberOfDrawers = Convert.ToInt32(drawerBox.Text);
                 desk.SurfaceMaterial = (DesktopMaterial)materialBox.SelectedIndex;
                 desk.CustomerName = customerNameBox.Text;
-                //desk.ShippingCost = quote.CalcShipping(Convert.ToInt32(shippingBox.SelectedIndex), desk.Width, desk.Depth); //Property?
                 desk.Date = quote.ShowDate();
-                //desk.OversizeCost = quote.CalcOversizeCost(desk.Width, desk.Depth); //Property?
-                //desk.DrawerCost = quote.CalcDrawerCost(desk.NumberOfDrawers); //Property?
-                //desk.MaterialCost = quote.CalcMaterialCost(Convert.ToInt32(materialBox.SelectedIndex)); //Property?
-                //desk.Area = desk.Width * desk.Depth; //Property?
                 desk.MaterialNotEmpty = materialBox.SelectedIndex; 
                 desk.ShippingNotEmpty = shippingBox.SelectedIndex;
                 if (shippingBox.SelectedIndex == 0)
