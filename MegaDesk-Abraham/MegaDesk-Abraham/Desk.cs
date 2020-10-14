@@ -114,8 +114,6 @@ namespace MegaDesk_Abraham
         public decimal basePrice { get { return BASE_PRICE; } }
     }
 
-    // Create enumerated type named DesktopMaterial
-
     public enum DesktopMaterial
     {
         Oak,
