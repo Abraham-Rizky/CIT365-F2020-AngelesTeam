@@ -43,6 +43,7 @@
             this.btnSearchQuote = new System.Windows.Forms.Button();
             this.materialBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.errorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchQuotes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,10 +53,9 @@
             this.returnToMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.returnToMainMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.returnToMainMenu.ForeColor = System.Drawing.Color.White;
-            this.returnToMainMenu.Location = new System.Drawing.Point(1168, 486);
-            this.returnToMainMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.returnToMainMenu.Location = new System.Drawing.Point(876, 395);
             this.returnToMainMenu.Name = "returnToMainMenu";
-            this.returnToMainMenu.Size = new System.Drawing.Size(244, 53);
+            this.returnToMainMenu.Size = new System.Drawing.Size(183, 43);
             this.returnToMainMenu.TabIndex = 2;
             this.returnToMainMenu.Text = "&Back to main menu";
             this.returnToMainMenu.UseVisualStyleBackColor = true;
@@ -75,12 +75,11 @@
             this.drawer_cost,
             this.shipping_cost,
             this.total_price});
-            this.dgvSearchQuotes.Location = new System.Drawing.Point(17, 15);
-            this.dgvSearchQuotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSearchQuotes.Location = new System.Drawing.Point(13, 12);
             this.dgvSearchQuotes.Name = "dgvSearchQuotes";
             this.dgvSearchQuotes.ReadOnly = true;
             this.dgvSearchQuotes.RowHeadersWidth = 51;
-            this.dgvSearchQuotes.Size = new System.Drawing.Size(1395, 464);
+            this.dgvSearchQuotes.Size = new System.Drawing.Size(1046, 377);
             this.dgvSearchQuotes.TabIndex = 3;
             // 
             // customer_name
@@ -169,10 +168,9 @@
             this.btnSearchQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchQuote.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchQuote.ForeColor = System.Drawing.Color.White;
-            this.btnSearchQuote.Location = new System.Drawing.Point(901, 486);
-            this.btnSearchQuote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchQuote.Location = new System.Drawing.Point(676, 395);
             this.btnSearchQuote.Name = "btnSearchQuote";
-            this.btnSearchQuote.Size = new System.Drawing.Size(244, 53);
+            this.btnSearchQuote.Size = new System.Drawing.Size(183, 43);
             this.btnSearchQuote.TabIndex = 2;
             this.btnSearchQuote.Text = "&Search Quote";
             this.btnSearchQuote.UseVisualStyleBackColor = true;
@@ -182,10 +180,9 @@
             // 
             this.materialBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialBox.FormattingEnabled = true;
-            this.materialBox.Location = new System.Drawing.Point(205, 494);
-            this.materialBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialBox.Location = new System.Drawing.Point(154, 401);
             this.materialBox.Name = "materialBox";
-            this.materialBox.Size = new System.Drawing.Size(395, 36);
+            this.materialBox.Size = new System.Drawing.Size(297, 29);
             this.materialBox.TabIndex = 6;
             // 
             // label5
@@ -193,25 +190,36 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(16, 498);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(12, 405);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 28);
+            this.label5.Size = new System.Drawing.Size(128, 21);
             this.label5.TabIndex = 7;
             this.label5.Text = "Desktop Material";
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabel.ForeColor = System.Drawing.Color.Black;
+            this.errorLabel.Location = new System.Drawing.Point(150, 433);
+            this.errorLabel.MaximumSize = new System.Drawing.Size(500, 0);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(14, 21);
+            this.errorLabel.TabIndex = 8;
+            this.errorLabel.Text = " ";
+            // 
             // SearchQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1428, 554);
+            this.ClientSize = new System.Drawing.Size(1071, 479);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.materialBox);
             this.Controls.Add(this.dgvSearchQuotes);
             this.Controls.Add(this.btnSearchQuote);
             this.Controls.Add(this.returnToMainMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SearchQuotes";
@@ -241,5 +249,6 @@
         private System.Windows.Forms.Button btnSearchQuote;
         private System.Windows.Forms.ComboBox materialBox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label errorLabel;
     }
 }

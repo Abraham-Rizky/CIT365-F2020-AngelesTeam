@@ -72,10 +72,11 @@ namespace MegaDesk_Abraham
         {
             if (materialBox.SelectedIndex == -1)
             {
-
+                errorLabel.Text = "Please select one of the options above.";
             }
             else
             {
+                errorLabel.Text = "";
                 PopulateDataGridView();
             }
         }
