@@ -1,0 +1,94 @@
+﻿@page
+@model MegaDeskWebApp.Pages.Quotes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Quote</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Quote.CustomerName" class="control-label"></label>
+                <input asp-for="Quote.CustomerName" class="form-control" />
+                <span asp-validation-for="Quote.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quote.Depth" class="control-label"></label>
+                <input asp-for="Quote.Depth" class="form-control" />
+                <span asp-validation-for="Quote.Depth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quote.Width" class="control-label"></label>
+                <input asp-for="Quote.Width" class="form-control" />
+                <span asp-validation-for="Quote.Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quote.DrawerCount" class="control-label"></label>
+                <input asp-for="Quote.DrawerCount" class="form-control" />
+                <span asp-validation-for="Quote.DrawerCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quote.DeskMaterial" class="control-label"></label>
+                <input asp-for="Quote.DeskMaterial" class="form-control" />
+                <span asp-validation-for="Quote.DeskMaterial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quote.ShippingOption" class="control-label"></label>
+                <input asp-for="Quote.ShippingOption" class="form-control" />
+                <span asp-validation-for="Quote.ShippingOption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quote.QuoteDate" class="control-label"></label>
+                <input asp-for="Quote.QuoteDate" class="form-control" />
+                <span asp-validation-for="Quote.QuoteDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quote.Area" class="control-label"></label>
+                <input asp-for="Quote.Area" class="form-control" />
+                <span asp-validation-for="Quote.Area" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quote.OversizeCost" class="control-label"></label>
+                <input asp-for="Quote.OversizeCost" class="form-control" />
+                <span asp-validation-for="Quote.OversizeCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quote.MaterialCost" class="control-label"></label>
+                <input asp-for="Quote.MaterialCost" class="form-control" />
+                <span asp-validation-for="Quote.MaterialCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quote.DrawerCost" class="control-label"></label>
+                <input asp-for="Quote.DrawerCost" class="form-control" />
+                <span asp-validation-for="Quote.DrawerCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quote.ShippingCost" class="control-label"></label>
+                <input asp-for="Quote.ShippingCost" class="form-control" />
+                <span asp-validation-for="Quote.ShippingCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quote.TotalCost" class="control-label"></label>
+                <input asp-for="Quote.TotalCost" class="form-control" />
+                <span asp-validation-for="Quote.TotalCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
