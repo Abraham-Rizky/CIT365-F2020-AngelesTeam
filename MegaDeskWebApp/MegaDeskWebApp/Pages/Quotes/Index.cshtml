@@ -14,17 +14,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Quote[0].CustomerName)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Quote[0].CustomerName)
+                </a>
             </th>
-@*            <th>
-                @Html.DisplayNameFor(model => model.Quote[0].Depth)
-            </th>*@
-@*            <th>
-                @Html.DisplayNameFor(model => model.Quote[0].Width)
-            </th>*@
-@*            <th>
-                @Html.DisplayNameFor(model => model.Quote[0].DrawerCount)
-            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Quote[0].DeskMaterial)
             </th>
@@ -32,23 +25,10 @@
                 @Html.DisplayNameFor(model => model.Quote[0].ShippingOption)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Quote[0].QuoteDate)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                    @Html.DisplayNameFor(model => model.Quote[0].QuoteDate)
+                </a>
             </th>
-@*            <th>
-                @Html.DisplayNameFor(model => model.Quote[0].Area)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quote[0].OversizeCost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quote[0].MaterialCost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quote[0].DrawerCost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quote[0].ShippingCost)
-            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Quote[0].TotalCost)
             </th>
@@ -61,15 +41,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CustomerName)
             </td>
-@*            <td>
-                @Html.DisplayFor(modelItem => item.Depth)
-            </td>*@
-@*            <td>
-                @Html.DisplayFor(modelItem => item.Width)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DrawerCount)
-            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.DeskMaterial)
             </td>
@@ -79,21 +50,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.QuoteDate)
             </td>
-@*            <td>
-                @Html.DisplayFor(modelItem => item.Area)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OversizeCost)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaterialCost)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DrawerCost)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShippingCost)
-            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.TotalCost)
             </td>
