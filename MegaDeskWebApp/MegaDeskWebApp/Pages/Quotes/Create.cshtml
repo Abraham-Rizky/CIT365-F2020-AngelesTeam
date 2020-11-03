@@ -20,12 +20,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Quote.Depth" class="control-label"></label>
-                <input asp-for="Quote.Depth" class="form-control" id="depth"/>
+                <input asp-for="Quote.Depth" class="form-control"/>
                 <span asp-validation-for="Quote.Depth" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Quote.Width" class="control-label" for="width"></label>
-                <input asp-for="Quote.Width" class="form-control" name="width" id="width"/>
+                <label asp-for="Quote.Width" class="control-label"></label>
+                <input asp-for="Quote.Width" class="form-control" name="Width" id="Width"/>
                 <span asp-validation-for="Quote.Width" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -47,36 +47,6 @@
                 <label asp-for="Quote.QuoteDate" class="control-label"></label>
                 <input asp-for="Quote.QuoteDate" class="form-control" />
                 <span asp-validation-for="Quote.QuoteDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-@*                <label asp-for="Quote.Area" class="control-label"></label>
-*@                <input asp-for="Quote.Area" class="form-control" type="hidden" id="area"/>
-                <span asp-validation-for="Quote.Area" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-@*                <label asp-for="Quote.OversizeCost" class="control-label"></label>
-*@                <input asp-for="Quote.OversizeCost" class="form-control" type="hidden"/>
-                <span asp-validation-for="Quote.OversizeCost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-@*                <label asp-for="Quote.MaterialCost" class="control-label"></label>
-*@                <input asp-for="Quote.MaterialCost" class="form-control" type="hidden"/>
-                <span asp-validation-for="Quote.MaterialCost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-@*                <label asp-for="Quote.DrawerCost" class="control-label"></label>
-*@                <input asp-for="Quote.DrawerCost" class="form-control" type="hidden"/>
-                <span asp-validation-for="Quote.DrawerCost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-@*                <label asp-for="Quote.ShippingCost" class="control-label"></label>
-*@                <input asp-for="Quote.ShippingCost" class="form-control" type="hidden"/>
-                <span asp-validation-for="Quote.ShippingCost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-@*                <label asp-for="Quote.TotalCost" class="control-label"></label>
-*@                <input asp-for="Quote.TotalCost" class="form-control" type="hidden"/>
-                <span asp-validation-for="Quote.TotalCost" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
