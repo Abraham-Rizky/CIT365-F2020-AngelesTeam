@@ -38,6 +38,7 @@ namespace MegaDeskWebApp.Pages.Quotes
             string drawerCount = Convert.ToString(Quote.DrawerCount);
             int materialIndex;
             string myMaterial = Quote.DeskMaterial;
+            string todayDate = Convert.ToString (Quote.QuoteDate);
 
             // Set material based on material index
             switch (myMaterial)
@@ -109,7 +110,8 @@ namespace MegaDeskWebApp.Pages.Quotes
             string material = Request.Form["material"];
             int shippingIndex = Convert.ToInt32(Request.Form["shipping"]);
             string materialIndex = Request.Form["material"];
-            DateTime todayDate = DateTime.Now;
+            //DateTime todayDate = DateTime.Now;
+            DateTime todayDate = DateTime.Parse (Request.Form["date"]);
             var id = Request.Form["ID"];
 
             // Calculate area

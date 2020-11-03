@@ -11,27 +11,21 @@ namespace MegaDeskWebApp.Models
     {
         public int ID { get; set; }
 
-        [Required]
         [Display(Name = "Name")]
         public string CustomerName { get; set; }
 
-        [Required]
         [Range(12, 48)]
         public int Depth { get; set; }
 
-        [Required]
         [Range(24,96)]
         public int Width { get; set; }
 
-        [Required]
         [Display(Name = "Drawer Count")]
         public int DrawerCount { get; set; }
 
-        [Required]
         [Display(Name = "Material")]
         public string DeskMaterial { get; set; }
 
-        [Required]
         [Display(Name = "Shipping")]
         public string ShippingOption { get; set; }
 

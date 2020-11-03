@@ -15,7 +15,7 @@
         &nbsp;Search by name: <input type="text" asp-for="SearchString" />
     </p><p>
         <input type="submit" value="Search" />
-        <a asp-page="./Index" asp-route-sortOrder="" asp-route-SearchString="" class="button">Reset</a>
+        <a asp-page="./Index" asp-route-sortOrder="" asp-route-SearchString="" class="btn-danger btn">Reset</a>
     </p>
 </form>
 <table class="table">
@@ -59,7 +59,7 @@
                 @Html.DisplayFor(modelItem => item.QuoteDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TotalCost)
+                $ @Html.DisplayFor(modelItem => item.TotalCost)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
