@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Add New Quote</a>
 </p>
 <table class="table">
     <thead>
@@ -16,15 +16,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Quote[0].CustomerName)
             </th>
-            <th>
+@*            <th>
                 @Html.DisplayNameFor(model => model.Quote[0].Depth)
-            </th>
-            <th>
+            </th>*@
+@*            <th>
                 @Html.DisplayNameFor(model => model.Quote[0].Width)
-            </th>
-            <th>
+            </th>*@
+@*            <th>
                 @Html.DisplayNameFor(model => model.Quote[0].DrawerCount)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Quote[0].DeskMaterial)
             </th>
@@ -34,7 +34,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Quote[0].QuoteDate)
             </th>
-            <th>
+@*            <th>
                 @Html.DisplayNameFor(model => model.Quote[0].Area)
             </th>
             <th>
@@ -48,7 +48,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Quote[0].ShippingCost)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Quote[0].TotalCost)
             </th>
@@ -61,15 +61,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CustomerName)
             </td>
-            <td>
+@*            <td>
                 @Html.DisplayFor(modelItem => item.Depth)
-            </td>
-            <td>
+            </td>*@
+@*            <td>
                 @Html.DisplayFor(modelItem => item.Width)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DrawerCount)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.DeskMaterial)
             </td>
@@ -79,7 +79,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.QuoteDate)
             </td>
-            <td>
+@*            <td>
                 @Html.DisplayFor(modelItem => item.Area)
             </td>
             <td>
@@ -93,7 +93,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ShippingCost)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.TotalCost)
             </td>
