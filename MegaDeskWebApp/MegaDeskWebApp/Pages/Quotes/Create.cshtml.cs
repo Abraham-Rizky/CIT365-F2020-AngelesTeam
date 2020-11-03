@@ -26,7 +26,7 @@ namespace MegaDeskWebApp.Pages.Quotes
 
         [BindProperty]
         public Quote Quote { get; set; }
-
+        
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
