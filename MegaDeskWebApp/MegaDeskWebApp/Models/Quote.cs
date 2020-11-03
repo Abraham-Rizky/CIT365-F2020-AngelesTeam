@@ -15,6 +15,8 @@ namespace MegaDeskWebApp.Models
 
         public int Depth { get; set; }
         public int Width { get; set; }
+
+        [Display(Name = "Drawer Count")]
         public int DrawerCount { get; set; }
 
         [Display(Name = "Material")]
@@ -28,9 +30,17 @@ namespace MegaDeskWebApp.Models
         public DateTime QuoteDate { get; set; }
 
         public decimal Area { get; set; }
+        
+        [Display(Name = "Oversize Cost")]
         public decimal OversizeCost { get; set; }
+        
+        [Display(Name = "Material Cost")]
         public decimal MaterialCost { get; set; }
+
+        [Display(Name = "Drawer Cost")]
         public decimal DrawerCost { get; set; }
+        
+        [Display(Name = "Shipping Cost")]
         public decimal ShippingCost { get; set; }
 
         [Display(Name = "Total Cost")]

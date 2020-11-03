@@ -16,68 +16,46 @@
             <input type="hidden" asp-for="Quote.ID" />
             <div class="form-group">
                 <label asp-for="Quote.CustomerName" class="control-label"></label>
-                <input asp-for="Quote.CustomerName" class="form-control" />
+                <input asp-for="Quote.CustomerName" class="form-control" id="name" name="name" />
                 <span asp-validation-for="Quote.CustomerName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.Depth" class="control-label"></label>
-                <input asp-for="Quote.Depth" class="form-control" />
+                <input asp-for="Quote.Depth" class="form-control" id="depth" name="depth" />
                 <span asp-validation-for="Quote.Depth" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.Width" class="control-label"></label>
-                <input asp-for="Quote.Width" class="form-control" />
+                <input asp-for="Quote.Width" class="form-control" name="width" id="width" />
                 <span asp-validation-for="Quote.Width" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.DrawerCount" class="control-label"></label>
-                <input asp-for="Quote.DrawerCount" class="form-control" />
+                <input asp-for="Quote.DrawerCount" class="form-control" id="drawercount" name="drawercount" />
                 <span asp-validation-for="Quote.DrawerCount" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.DeskMaterial" class="control-label"></label>
-                <input asp-for="Quote.DeskMaterial" class="form-control" />
+                <select asp-for="Quote.DeskMaterial" class="form-control" id="material" name="material">
+                    <option disabled selected> -- select an option -- </option>
+                    <option value="1">Oak</option>
+                    <option value="2">Laminate</option>
+                    <option value="3">Pine</option>
+                    <option value="4">Rosewood</option>
+                    <option value="5">Veneer</option>
+                </select>
                 <span asp-validation-for="Quote.DeskMaterial" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.ShippingOption" class="control-label"></label>
-                <input asp-for="Quote.ShippingOption" class="form-control" />
+                <select asp-for="Quote.ShippingOption" class="form-control" id="shipping" name="shipping">
+                    <option disabled selected> -- select an option -- </option>
+                    <option value="0">Standard 14 days</option>
+                    <option value="1">3 days</option>
+                    <option value="2">5 days</option>
+                    <option value="3">7 days</option>
+                </select>                
                 <span asp-validation-for="Quote.ShippingOption" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quote.QuoteDate" class="control-label"></label>
-                <input asp-for="Quote.QuoteDate" class="form-control" />
-                <span asp-validation-for="Quote.QuoteDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quote.Area" class="control-label"></label>
-                <input asp-for="Quote.Area" class="form-control" />
-                <span asp-validation-for="Quote.Area" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quote.OversizeCost" class="control-label"></label>
-                <input asp-for="Quote.OversizeCost" class="form-control" />
-                <span asp-validation-for="Quote.OversizeCost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quote.MaterialCost" class="control-label"></label>
-                <input asp-for="Quote.MaterialCost" class="form-control" />
-                <span asp-validation-for="Quote.MaterialCost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quote.DrawerCost" class="control-label"></label>
-                <input asp-for="Quote.DrawerCost" class="form-control" />
-                <span asp-validation-for="Quote.DrawerCost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quote.ShippingCost" class="control-label"></label>
-                <input asp-for="Quote.ShippingCost" class="form-control" />
-                <span asp-validation-for="Quote.ShippingCost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quote.TotalCost" class="control-label"></label>
-                <input asp-for="Quote.TotalCost" class="form-control" />
-                <span asp-validation-for="Quote.TotalCost" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
