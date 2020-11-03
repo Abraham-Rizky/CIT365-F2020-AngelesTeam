@@ -43,6 +43,10 @@ namespace MegaDeskWebApp.Pages.Quotes
             var quotes = from m in _context.Quote
                              select m;
 
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                quotes = quotes.Where(s => s.CustomerName.Contains(SearchString));
+            }
             //switch case for sorting
             switch (sortOrder)
             {

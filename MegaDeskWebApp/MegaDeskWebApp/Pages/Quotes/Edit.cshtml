@@ -13,7 +13,14 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Quote.ID" />
+            <input type="hidden" asp-for="Quote.ID" id="ID" name="ID"/>
+            <input type="hidden" asp-for="Quote.CustomerName" />
+            <input type="hidden" asp-for="Quote.Depth" />
+            <input type="hidden" asp-for="Quote.Width" />
+            <input type="hidden" asp-for="Quote.QuoteDate" />
+            <input type="hidden" asp-for="Quote.DrawerCount" />
+            <input type="hidden" asp-for="Quote.DeskMaterial" />
+            <input type="hidden" asp-for="Quote.ShippingOption" />
             <div class="form-group">
                 <label asp-for="Quote.CustomerName" class="control-label"></label>
                 <input asp-for="Quote.CustomerName" class="form-control" id="name" name="name" />
@@ -50,11 +57,11 @@
                 <label asp-for="Quote.ShippingOption" class="control-label"></label>
                 <select asp-for="Quote.ShippingOption" class="form-control" id="shipping" name="shipping">
                     <option disabled selected> -- select an option -- </option>
-                    <option value="0">Standard 14 days</option>
-                    <option value="1">3 days</option>
-                    <option value="2">5 days</option>
-                    <option value="3">7 days</option>
-                </select>                
+                    <option value="99">Standard 14 days</option>
+                    <option value="0">3 days</option>
+                    <option value="1">5 days</option>
+                    <option value="2">7 days</option>
+                </select>
                 <span asp-validation-for="Quote.ShippingOption" class="text-danger"></span>
             </div>
             <div class="form-group">

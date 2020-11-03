@@ -118,7 +118,7 @@ namespace MegaDeskWebApp.Pages.Quotes
             if(shippingIndex == 99)
             {
                 shippingCost = 0;
-                myShipping = "Standard 14 days";
+                myShipping = "Standard 14 Days";
             }
             else
             {

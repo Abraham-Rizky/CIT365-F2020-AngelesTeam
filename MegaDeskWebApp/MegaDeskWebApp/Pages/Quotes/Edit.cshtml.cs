@@ -32,6 +32,60 @@ namespace MegaDeskWebApp.Pages.Quotes
 
             Quote = await _context.Quote.FirstOrDefaultAsync(m => m.ID == id);
 
+            string name = Quote.CustomerName;
+            string width = Convert.ToString(Quote.Width);
+            string depth = Convert.ToString(Quote.Depth);
+            string drawerCount = Convert.ToString(Quote.DrawerCount);
+            int materialIndex;
+            string myMaterial = Quote.DeskMaterial;
+
+            // Set material based on material index
+            switch (myMaterial)
+            {
+                case "Oak":
+                    materialIndex = 1;
+                    break;
+                case "Laminate":
+                    materialIndex = 2;
+                    break;
+                case "Pine":
+                    materialIndex = 3;
+                    break;
+                case "Rosewood":
+                    materialIndex = 4;
+                    break;
+                case "Veneer":
+                    materialIndex = 5;
+                    break;
+                default:
+                    materialIndex = -1;
+                    break;
+            }
+            Quote.DeskMaterial = Convert.ToString(materialIndex);
+
+            int shippingIndex;
+            string myShipping = Quote.ShippingOption;
+            // Set shipping based on shipping index
+            switch (myShipping)
+            {
+                case "Standard 14 Days":
+                    shippingIndex = 99;
+                    break;
+                case "3 Days":
+                    shippingIndex = 0;
+                    break;
+                case "5 Days":
+                    shippingIndex = 1;
+                    break;
+                case "7 Days":
+                    shippingIndex = 2;
+                    break;
+                default:
+                    shippingIndex = -1;
+                    break;
+            }
+            Quote.ShippingOption = Convert.ToString(shippingIndex);
+
             if (Quote == null)
             {
                 return NotFound();
@@ -46,7 +100,7 @@ namespace MegaDeskWebApp.Pages.Quotes
                 return Page();
             }
 
-            // POST edited fields
+            //Pass the values from onGetAsync to onPostAsync
             Quote Quote = new Quote();
             string name = Request.Form["name"];
             string width = Request.Form["width"];
@@ -56,6 +110,7 @@ namespace MegaDeskWebApp.Pages.Quotes
             int shippingIndex = Convert.ToInt32(Request.Form["shipping"]);
             string materialIndex = Request.Form["material"];
             DateTime todayDate = DateTime.Now;
+            var id = Request.Form["ID"];
 
             // Calculate area
             var area = Int32.Parse(width) * Int32.Parse(depth);
@@ -135,7 +190,7 @@ namespace MegaDeskWebApp.Pages.Quotes
             if (shippingIndex == 99)
             {
                 shippingCost = 0;
-                myShipping = "Standard 14 days";
+                myShipping = "Standard 14 Days";
             }
             else
             {
@@ -161,6 +216,7 @@ namespace MegaDeskWebApp.Pages.Quotes
             var drawerCost = Int32.Parse(drawerCount) * 50;
 
             // POST all required fields
+            Quote.ID = Convert.ToInt32(id);
             Quote.CustomerName = name;
             Quote.Width = Int32.Parse(width);
             Quote.Depth = Int32.Parse(depth);
@@ -177,7 +233,7 @@ namespace MegaDeskWebApp.Pages.Quotes
             // Calculate total cost
             decimal totalCost = 200 + oversizeCost + drawerCost + materialCost + shippingCost;
             Quote.TotalCost = totalCost;
-            // End of POST
+            //END of transferring values//
             _context.Attach(Quote).State = EntityState.Modified;
 
             try
