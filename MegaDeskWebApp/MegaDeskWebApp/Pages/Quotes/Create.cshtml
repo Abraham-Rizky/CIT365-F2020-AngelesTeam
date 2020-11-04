@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Quote.DeskMaterial" class="control-label"></label>
-                <select asp-for="Quote.DeskMaterial" class="form-control" id="material" name="material">
+                <select asp-for="Quote.DeskMaterial" class="form-control" id="material" name="material" onchange="Swap(this,'MyImg');">
                     <option disabled selected> -- select an option -- </option>
                     <option value="1">Oak</option>
                     <option value="2">Laminate</option>
@@ -43,6 +43,9 @@
                     <option value="4">Rosewood</option>
                     <option value="5">Veneer</option>
                 </select>
+                <div style="padding: 10px 10px 0px 10px; align-content: center;"><img id="MyImg" src="" style="border-radius: 15px; border: solid #808080 3px; text-align: center; margin: auto;" width=250 height=250></div>
+                
+
                 <span asp-validation-for="Quote.DeskMaterial" class="text-danger"></span>
             </div>
             <div class="form-group">
