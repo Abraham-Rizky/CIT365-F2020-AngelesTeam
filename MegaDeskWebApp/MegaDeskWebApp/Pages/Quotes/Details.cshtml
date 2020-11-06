@@ -9,85 +9,149 @@
 
 <div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.CustomerName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Quote.CustomerName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.Depth)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Quote.Depth)<b> inch</b>
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.Width)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Quote.Width)<b> inch</b>
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.DrawerCount)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Quote.DrawerCount)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.DeskMaterial)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Quote.DeskMaterial)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.ShippingOption)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Quote.ShippingOption)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.QuoteDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Quote.QuoteDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.Area)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Quote.Area)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.OversizeCost)
-        </dt>
-        <dd>
-            $ @Html.DisplayFor(model => model.Quote.OversizeCost)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.MaterialCost)
-        </dt>
-        <dd>
-            $ @Html.DisplayFor(model => model.Quote.MaterialCost)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.DrawerCost)
-        </dt>
-        <dd>
-            $ @Html.DisplayFor(model => model.Quote.DrawerCost)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.ShippingCost)
-        </dt>
-        <dd>
-            $ @Html.DisplayFor(model => model.Quote.ShippingCost)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote.TotalCost)
-        </dt>
-        <dd>
-            $ @Html.DisplayFor(model => model.Quote.TotalCost)
-        </dd>
+    <dl class="dl-horizontal container">
+
+        <div class="row">
+            <dt class="quote-subheading">
+                Customer
+            </dt>
+        </div>
+
+        <div class="row">
+            <dt class="col-lg-3">
+                @Html.DisplayNameFor(model => model.Quote.CustomerName)
+            </dt>
+            <dd class="col-lg-2">
+                @Html.DisplayFor(model => model.Quote.CustomerName)
+            </dd>
+        </div>
+
+        <div class="row">
+            <dt class="col-lg-3">
+                @Html.DisplayNameFor(model => model.Quote.QuoteDate)
+            </dt>
+            <dd class="col-lg-2">
+                @Html.DisplayFor(model => model.Quote.QuoteDate)
+            </dd>
+        </div>
+
+        <div class="row">
+            <dt class="quote-subheading">
+                Desktop Material
+            </dt>
+        </div>
+
+        <div class="row">
+            <dt class="col-lg-3">
+                @Html.DisplayNameFor(model => model.Quote.Width)
+            </dt>
+            <dd class="col-lg-2 text-right">
+                @Html.DisplayFor(model => model.Quote.Width)
+            </dd>
+        </div>
+
+        <div class="row">
+            <dt class="col-lg-3">
+                @Html.DisplayNameFor(model => model.Quote.Depth)
+            </dt>
+            <dd class="col-lg-2 text-right">
+                @Html.DisplayFor(model => model.Quote.Depth)
+            </dd>
+        </div>
+
+        <div class="row">
+            <dt class="col-lg-3">
+                @Html.DisplayNameFor(model => model.Quote.Area)
+            </dt>
+            <dd class="col-lg-2 text-right">
+                @Html.DisplayFor(model => model.Quote.Area) sq. in.
+            </dd>
+        </div>
+
+        <div class="row">
+            <dt class="col-lg-3">
+                @Html.DisplayNameFor(model => model.Quote.DeskMaterial)
+            </dt>
+            <dd class="col-lg-2 text-right">
+                @Html.DisplayFor(model => model.Quote.DeskMaterial)
+            </dd>
+        </div>
+
+        <div class="row">
+            <dt class="col-lg-3">
+                @Html.DisplayNameFor(model => model.Quote.OversizeCost)
+            </dt>
+            <dd class="col-lg-2 text-right">
+                $ @Html.DisplayFor(model => model.Quote.OversizeCost)
+            </dd>
+        </div>
+
+        <div class="row">
+            <dt class="col-lg-3">
+                @Html.DisplayNameFor(model => model.Quote.MaterialCost)
+            </dt>
+            <dd class="col-lg-2 text-right">
+                $ @Html.DisplayFor(model => model.Quote.MaterialCost)
+            </dd>
+        </div>
+
+
+        <div class="row">
+            <dt class="quote-subheading">
+                Drawers
+            </dt>
+        </div>
+
+        <div class="row">
+            <dt class="col-lg-3">
+                @Html.DisplayNameFor(model => model.Quote.DrawerCount)
+            </dt>
+            <dd class="col-lg-2 text-right">
+                @Html.DisplayFor(model => model.Quote.DrawerCount)
+            </dd>
+        </div>
+
+        <div class="row">
+            <dt class="col-lg-3">
+                @Html.DisplayNameFor(model => model.Quote.DrawerCost)
+            </dt>
+            <dd class="col-lg-2 text-right">
+                $ @Html.DisplayFor(model => model.Quote.DrawerCost)
+            </dd>
+        </div>
+
+        <div class="row">
+            <dt class="quote-subheading">
+                Shipping
+            </dt>
+        </div>
+
+        <div class="row">
+            <dt class="col-lg-3">
+                @Html.DisplayNameFor(model => model.Quote.ShippingOption)
+            </dt>
+            <dd class="col-lg-2 text-right">
+                @Html.DisplayFor(model => model.Quote.ShippingOption)
+            </dd>
+        </div>
+
+        <div class="row">
+            <dt class="col-lg-3">
+                @Html.DisplayNameFor(model => model.Quote.ShippingCost)
+            </dt>
+            <dd class="col-lg-2 text-right">
+                $ @Html.DisplayFor(model => model.Quote.ShippingCost)
+            </dd>
+        </div>
+        
+        <div class="row">
+            <dt>
+                @Html.DisplayNameFor(model => model.Quote.TotalCost)
+            </dt>
+            <dd class="col-lg-2 text-right">
+                $ @Html.DisplayFor(model => model.Quote.TotalCost)
+            </dd>
+        </div>
     </dl>
 </div>
 <div>
