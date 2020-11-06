@@ -161,6 +161,11 @@ namespace MegaDeskWebApp.Pages.Quotes
             decimal totalCost = 200 + oversizeCost + drawerCost + materialCost + shippingCost;
             Quote.TotalCost = totalCost;
 
+            if (!TryValidateModel(Quote, nameof(Quote)))
+            {
+                return Page();
+            }
+
 
             _context.Quote.Add(Quote);
             await _context.SaveChangesAsync();

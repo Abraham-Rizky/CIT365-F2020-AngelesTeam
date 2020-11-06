@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,16 +12,21 @@ namespace MegaDeskWebApp.Models
     {
         public int ID { get; set; }
 
+        [StringLength(20, MinimumLength = 3)]
+        [Required(ErrorMessage = "Name is Required")]
         [Display(Name = "Name")]
         public string CustomerName { get; set; }
 
+        [Display(Name = "Depth")]
         [Range(12, 48)]
         public int Depth { get; set; }
 
+        [Display(Name = "Width")]
         [Range(24,96)]
         public int Width { get; set; }
 
         [Display(Name = "Drawer Count")]
+        [Range(0, 7)]
         public int DrawerCount { get; set; }
 
         [Display(Name = "Material")]
