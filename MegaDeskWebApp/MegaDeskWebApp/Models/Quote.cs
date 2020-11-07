@@ -12,7 +12,8 @@ namespace MegaDeskWebApp.Models
     {
         public int ID { get; set; }
 
-        [StringLength(20, MinimumLength = 3)]
+        [Required]
+        [RegularExpression(@"^([A-Za-z]{3,50}|([A-Za-z]+\s[A-Za-z]+))$")]
         [Display(Name = "Name")]
         public string CustomerName { get; set; }
 
@@ -28,11 +29,14 @@ namespace MegaDeskWebApp.Models
         [Range(0, 7)]
         public int DrawerCount { get; set; }
 
+        [Required]
         [Display(Name = "Material")]
         public string DeskMaterial { get; set; }
-
+        
+        [Required]
         [Display(Name = "Shipping")]
         public string ShippingOption { get; set; }
+
 
         [Display(Name = "Date")]
         [DataType(DataType.Date)]
