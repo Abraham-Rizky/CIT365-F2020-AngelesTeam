@@ -41,7 +41,7 @@ namespace MegaDeskWebApp.Pages.Quotes
             string drawerCount = Convert.ToString(Quote.DrawerCount);
             int materialIndex;
             string myMaterial = Quote.DeskMaterial;
-            string todayDate = Convert.ToString (Quote.QuoteDate);
+            string todayDate = Convert.ToString(Quote.QuoteDate);
 
             // Set material based on material index
             switch (myMaterial)
@@ -103,24 +103,8 @@ namespace MegaDeskWebApp.Pages.Quotes
             {
                 return Page();
             }
+            decimal area = Quote.Width * Quote.Depth;
 
-            //Pass the values from onGetAsync to onPostAsync
-            Quote Quote = new Quote();
-            string name = Request.Form["name"];
-            string width = Request.Form["width"];
-            string depth = Request.Form["depth"];
-            string drawerCount = Request.Form["drawercount"];
-            string material = Request.Form["material"];
-            int shippingIndex = Convert.ToInt32(Request.Form["shipping"]);
-            string materialIndex = Request.Form["material"];
-            //DateTime todayDate = DateTime.Now;
-            DateTime todayDate = DateTime.Parse (Request.Form["date"]);
-            var id = Request.Form["ID"];
-
-            // Calculate area
-            var area = Int32.Parse(width) * Int32.Parse(depth);
-
-            // Calculate oversize cost
             decimal oversizeCost;
             if (area > 1000)
             {
@@ -131,9 +115,10 @@ namespace MegaDeskWebApp.Pages.Quotes
                 oversizeCost = 0;
             }
 
+            int materialIndex = Convert.ToInt32(Quote.DeskMaterial);
             decimal materialCost;
             string myMaterial;
-            switch (Int32.Parse(materialIndex))
+            switch (materialIndex)
             {
                 case 1:
                     materialCost = 200;
@@ -189,7 +174,7 @@ namespace MegaDeskWebApp.Pages.Quotes
                 shippingAreaIndex = 0;
             }
 
-
+            int shippingIndex = Convert.ToInt32( Quote.ShippingOption );
             var shippingCost = 0;
             var myShipping = "";
             if (shippingIndex == 99)
@@ -217,28 +202,20 @@ namespace MegaDeskWebApp.Pages.Quotes
                 }
             }
 
-            // Calculate drawer cost at $50 each
-            var drawerCost = Int32.Parse(drawerCount) * 50;
-
-            // POST all required fields
-            Quote.ID = Convert.ToInt32(id);
-            Quote.CustomerName = name;
-            Quote.Width = Int32.Parse(width);
-            Quote.Depth = Int32.Parse(depth);
+            // Calculdate drawer cost at $50 each
+            var drawerCost = Quote.DrawerCount * 50;
             Quote.Area = area;
-            Quote.DrawerCount = Int32.Parse(drawerCount);
             Quote.DrawerCost = drawerCost;
             Quote.DeskMaterial = myMaterial;
             Quote.ShippingOption = myShipping;
+            DateTime todayDate = DateTime.Now;
             Quote.QuoteDate = todayDate;
             Quote.OversizeCost = oversizeCost;
             Quote.MaterialCost = materialCost;
             Quote.ShippingCost = shippingCost;
-
             // Calculate total cost
             decimal totalCost = 200 + oversizeCost + drawerCost + materialCost + shippingCost;
             Quote.TotalCost = totalCost;
-            //END of transferring values//
             _context.Attach(Quote).State = EntityState.Modified;
 
             try
