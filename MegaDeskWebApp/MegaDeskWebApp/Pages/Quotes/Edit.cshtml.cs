@@ -174,7 +174,7 @@ namespace MegaDeskWebApp.Pages.Quotes
                 shippingAreaIndex = 0;
             }
 
-            int shippingIndex = Convert.ToInt32( Quote.ShippingOption );
+            int shippingIndex = Convert.ToInt32( Request.Form["shipping"] );
             var shippingCost = 0;
             var myShipping = "";
             if (shippingIndex == 99)
@@ -208,14 +208,13 @@ namespace MegaDeskWebApp.Pages.Quotes
             Quote.DrawerCost = drawerCost;
             Quote.DeskMaterial = myMaterial;
             Quote.ShippingOption = myShipping;
-            DateTime todayDate = DateTime.Now;
-            Quote.QuoteDate = todayDate;
             Quote.OversizeCost = oversizeCost;
             Quote.MaterialCost = materialCost;
             Quote.ShippingCost = shippingCost;
             // Calculate total cost
             decimal totalCost = 200 + oversizeCost + drawerCost + materialCost + shippingCost;
             Quote.TotalCost = totalCost;
+            
             _context.Attach(Quote).State = EntityState.Modified;
 
             try
