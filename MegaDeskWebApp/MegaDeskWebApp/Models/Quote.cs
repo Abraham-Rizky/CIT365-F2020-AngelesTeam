@@ -13,7 +13,6 @@ namespace MegaDeskWebApp.Models
         public int ID { get; set; }
 
         [StringLength(20, MinimumLength = 3)]
-        [Required(ErrorMessage = "Name is Required")]
         [Display(Name = "Name")]
         public string CustomerName { get; set; }
 

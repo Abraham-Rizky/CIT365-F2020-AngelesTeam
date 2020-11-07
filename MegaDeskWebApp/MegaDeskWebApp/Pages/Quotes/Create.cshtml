@@ -7,14 +7,13 @@
 
 <h2>Add New Quote</h2>
 <hr />
-<div asp-validation-summary="All" class="text-danger"></div>
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Quote.CustomerName" class="control-label"></label>
-                <input asp-for="Quote.CustomerName" class="form-control" name="name" placeholder="John Doe" />
+                <input asp-for="Quote.CustomerName" class="form-control" id="name" name="name" placeholder="John Doe"/>
                 <span asp-validation-for="Quote.CustomerName" class="text-danger">
                 </span>
             </div>
@@ -44,8 +43,6 @@
                     <option value="5">Veneer</option>
                 </select>
                 <div style="padding: 10px 10px 0px 10px; align-content: center;"><img id="MyImg" src="/images/filler_image.png" alt="material_image" style="border-radius: 15px; border: solid #808080 3px; text-align: center; margin: auto;" width=250 height=250></div>
-
-
                 <span asp-validation-for="Quote.DeskMaterial" class="text-danger"></span>
             </div>
             <div class="form-group">
