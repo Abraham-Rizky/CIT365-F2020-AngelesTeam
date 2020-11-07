@@ -4,14 +4,16 @@ using MegaDeskWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MegaDeskWebApp.Migrations
 {
     [DbContext(typeof(MegaDeskWebAppContext))]
-    partial class MegaDeskWebAppContextModelSnapshot : ModelSnapshot
+    [Migration("20201107143548_lh_work")]
+    partial class lh_work
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
