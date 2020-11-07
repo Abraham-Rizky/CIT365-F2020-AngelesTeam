@@ -5,7 +5,7 @@
 
 // Code for tool tip with images
 var Path = '/images/';
-var ImgAry = new Array('', 'oak_3.png', 'laminate_2.png', 'pine_2.png', 'rosewood_2.png', 'veneer_2.png');
+var ImgAry = new Array('image_filler.png', 'oak_3.png', 'laminate_2.png', 'pine_2.png', 'rosewood_2.png', 'veneer_2.png');
 
 function Swap(obj, id) {
     var i = obj.selectedIndex;

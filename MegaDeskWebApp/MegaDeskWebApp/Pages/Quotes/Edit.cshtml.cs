@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MegaDeskWebApp.Data;
 using MegaDeskWebApp.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace MegaDeskWebApp.Pages.Quotes
 {
@@ -20,11 +21,13 @@ namespace MegaDeskWebApp.Pages.Quotes
             _context = context;
         }
 
+
         [BindProperty]
         public Quote Quote { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
@@ -214,7 +217,7 @@ namespace MegaDeskWebApp.Pages.Quotes
                 }
             }
 
-            // Calculdate drawer cost at $50 each
+            // Calculate drawer cost at $50 each
             var drawerCost = Int32.Parse(drawerCount) * 50;
 
             // POST all required fields

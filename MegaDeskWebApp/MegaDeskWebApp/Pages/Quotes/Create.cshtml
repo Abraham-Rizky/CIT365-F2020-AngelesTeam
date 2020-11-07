@@ -7,33 +7,35 @@
 
 <h2>Add New Quote</h2>
 <hr />
+<div asp-validation-summary="All" class="text-danger"></div>
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Quote.CustomerName" class="control-label"></label>
-                <input asp-for="Quote.CustomerName" class="form-control" id="name" name="name"/>
-                <span asp-validation-for="Quote.CustomerName" class="text-danger"></span>
+                <input asp-for="Quote.CustomerName" class="form-control" name="name" placeholder="John Doe" />
+                <span asp-validation-for="Quote.CustomerName" class="text-danger">
+                </span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.Depth" class="control-label"></label>
-                <input asp-for="Quote.Depth" class="form-control" id="depth" name="depth"/>
+                <input asp-for="Quote.Depth" class="form-control"  name="depth" placeholder="12-48" />
                 <span asp-validation-for="Quote.Depth" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.Width" class="control-label"></label>
-                <input asp-for="Quote.Width" class="form-control" name="width" id="width"/>
+                <input asp-for="Quote.Width" class="form-control" name="width" id="width" placeholder="24-96" />
                 <span asp-validation-for="Quote.Width" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.DrawerCount" class="control-label"></label>
-                <input asp-for="Quote.DrawerCount" class="form-control" id="drawercount" name="drawercount"/>
+                <input asp-for="Quote.DrawerCount" class="form-control"  name="drawercount" placeholder="0-7" />
                 <span asp-validation-for="Quote.DrawerCount" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.DeskMaterial" class="control-label"></label>
-                <select asp-for="Quote.DeskMaterial" class="form-control" id="material" name="material" onchange="Swap(this,'MyImg');">
+                <select asp-for="Quote.DeskMaterial" class="form-control"  name="material" onchange="Swap(this,'MyImg');">
                     <option disabled selected> -- select an option -- </option>
                     <option value="1">Oak</option>
                     <option value="2">Laminate</option>
@@ -41,14 +43,14 @@
                     <option value="4">Rosewood</option>
                     <option value="5">Veneer</option>
                 </select>
-                <div style="padding: 10px 10px 0px 10px; align-content: center;"><img id="MyImg" src="" style="border-radius: 15px; border: solid #808080 3px; text-align: center; margin: auto;" width=250 height=250></div>
-                
+                <div style="padding: 10px 10px 0px 10px; align-content: center;"><img id="MyImg" src="/images/filler_image.png" alt="material_image" style="border-radius: 15px; border: solid #808080 3px; text-align: center; margin: auto;" width=250 height=250></div>
+
 
                 <span asp-validation-for="Quote.DeskMaterial" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.ShippingOption" class="control-label"></label>
-                <select asp-for="Quote.ShippingOption" class="form-control" id="shipping" name="shipping">
+                <select asp-for="Quote.ShippingOption" class="form-control" name="shipping">
                     <option disabled selected> -- select an option -- </option>
                     <option value="99">Standard 14 days</option>
                     <option value="0">3 days</option>

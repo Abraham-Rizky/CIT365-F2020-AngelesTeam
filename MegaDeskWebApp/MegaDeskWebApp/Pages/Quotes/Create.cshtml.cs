@@ -167,6 +167,11 @@ namespace MegaDeskWebApp.Pages.Quotes
             
 
 
+            if (!TryValidateModel(Quote, nameof(Quote)))
+            {
+                return Page();
+            }
+
 
             _context.Quote.Add(Quote);
             await _context.SaveChangesAsync();
