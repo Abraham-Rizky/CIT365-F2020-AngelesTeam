@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SacramentMeetingPlanner.Models
 {
-    public class Meetings
+    public class Meeting
     {
         public int ID { get; set; }
         public DateTime MeetingDate { get; set; }
