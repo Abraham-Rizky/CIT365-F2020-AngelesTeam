@@ -12,5 +12,6 @@ namespace SacramentMeetingPlanner.Models
         public int SpeakerIndex { get; set; }
         public string FullName { get; set; }
         public string Topic { get; set; }
+        public string Notes { get; set; }
     }
 }
