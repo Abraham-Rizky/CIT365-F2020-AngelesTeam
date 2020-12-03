@@ -17,7 +17,7 @@ namespace SacramentMeetingPlanner.Data
 
             var meetings = new Meeting[]
             {
-            new Meeting{MeetingDate=DateTime.Parse("2005-09-01"),Conductor="Alexander Laureta",OpeningHymn="The Spirit of God",Invocation="Leo Cristiano",SacramentHymn="As Now We Take The Sacrament",ClosingHymn="Because I Have Given Much",Benediction="Meredith Laurence",Notes=""}
+            new Meeting{MeetingDate=DateTime.Parse("2005-09-01"),Conductor="Alexander Laureta",OpeningHymn="The Spirit of God",Invocation="Leo Cristiano",SacramentHymn="As Now We Take The Sacrament",ClosingHymn="Because I Have Been Given Much",Benediction="Meredith Laurence",Notes=""}
             };
             foreach (Meeting s in meetings)
             {
