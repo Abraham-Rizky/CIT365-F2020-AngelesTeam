@@ -64,19 +64,23 @@
         <dd class="col-sm-10">
             <table class="table">
                 <tr>
+                    <th>Sequence</th>
                     <th>Name</th>
                     <th>Topic</th>
                 </tr>
                 @foreach (var item in Model.Speakers)
                 {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.FullName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Topic)
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SpeakerIndex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Topic)
+                </td>
+            </tr>
                 }
             </table>
         </dd>

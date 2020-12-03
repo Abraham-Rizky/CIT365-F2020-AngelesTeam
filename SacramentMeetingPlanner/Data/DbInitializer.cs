@@ -27,9 +27,9 @@ namespace SacramentMeetingPlanner.Data
 
             var speakers = new Speaker[]
             {
-            new Speaker{SpeakerIndex=1,FullName="George Flint",Topic="Faith",Notes="",MeetingID=1},
-            new Speaker{SpeakerIndex=2,FullName="Maria Diaz",Topic="Faith",Notes="",MeetingID=1},
-            new Speaker{SpeakerIndex =3,FullName="Zola Giuseppe",Topic="Faith",Notes="",MeetingID=1}
+            new Speaker{SpeakerIndex=1,FullName="George Flint",Topic="Faith",MeetingID=1},
+            new Speaker{SpeakerIndex=2,FullName="Maria Diaz",Topic="Faith",MeetingID=1},
+            new Speaker{SpeakerIndex =3,FullName="Zola Giuseppe",Topic="Faith",MeetingID=1}
             };
             foreach (Speaker c in speakers)
             {

@@ -53,6 +53,33 @@
                 <input asp-for="Notes" class="form-control" />
                 <span asp-validation-for="Notes" class="text-danger"></span>
             </div>
+            <h3>Speakers</h3>
+            <p></p>
+            <table class="table">
+                <tr>
+                    <th>Sequence</th>
+                    <th>Name</th>
+                    <th>Topic</th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model.Speakers)
+                {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpeakerIndex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topic)
+            </td>
+            <td>
+                <a asp-controller="Speakers" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-controller="Speakers" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>}
+            </table>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
