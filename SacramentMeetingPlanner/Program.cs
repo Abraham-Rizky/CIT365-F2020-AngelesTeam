@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using SacramentMeetingPlanner.Data;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,6 +7,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using SacramentMeetingPlanner.Data;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace SacramentMeetingPlanner
 {
@@ -22,6 +22,7 @@ namespace SacramentMeetingPlanner
 
             host.Run();
         }
+
         private static void CreateDbIfNotExists(IWebHost host)
         {
             using (var scope = host.Services.CreateScope())
@@ -39,6 +40,7 @@ namespace SacramentMeetingPlanner
                 }
             }
         }
+
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
