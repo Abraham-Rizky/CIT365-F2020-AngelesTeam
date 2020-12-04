@@ -22,10 +22,6 @@ namespace SacramentMeetingPlanner.Controllers
         // GET: Meetings
         public async Task<IActionResult> Index()
         {
-            var meetings = _context.Meetings
-                .Include(s => s.SpeakingAssignments)
-                .Include(s => s.Speakers)
-                .AsNoTracking();
             return View(await _context.Meetings.ToListAsync());
         }
 
@@ -38,6 +34,9 @@ namespace SacramentMeetingPlanner.Controllers
             }
 
             var meeting = await _context.Meetings
+                .Include(s => s.SpeakingAssignments)
+                    .ThenInclude(e => e.Speaker)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (meeting == null)
             {
