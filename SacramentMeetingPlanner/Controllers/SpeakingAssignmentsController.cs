@@ -120,7 +120,10 @@ namespace SacramentMeetingPlanner.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Meetings");
+
+
             }
             ViewData["MeetingID"] = new SelectList(_context.Meetings, "ID", "ID", speakingAssignment.MeetingID);
             ViewData["SpeakerID"] = new SelectList(_context.Speakers, "ID", "ID", speakingAssignment.SpeakerID);
@@ -155,7 +158,9 @@ namespace SacramentMeetingPlanner.Controllers
             var speakingAssignment = await _context.SpeakingAssignments.FindAsync(id);
             _context.SpeakingAssignments.Remove(speakingAssignment);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            //return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Meetings");
+
         }
 
         private bool SpeakingAssignmentExists(int id)

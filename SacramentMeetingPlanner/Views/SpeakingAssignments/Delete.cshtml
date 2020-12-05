@@ -21,19 +21,19 @@
             @Html.DisplayNameFor(model => model.Speaker)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Speaker.ID)
+            @Html.DisplayFor(model => model.Speaker.Name)
         </dd class>
-        <dt class = "col-sm-2">
+@*        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Meeting)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Meeting.ID)
-        </dd class>
+        </dd class>*@
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="SpeakingAssignmentID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a href='javascript:history.go(-1)'>Go Back</a>
     </form>
 </div>

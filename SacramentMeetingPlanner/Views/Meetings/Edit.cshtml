@@ -54,6 +54,31 @@
                 <span asp-validation-for="Notes" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <table class="table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Topic</th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model.SpeakingAssignments)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Speaker.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Topic)
+                            </td>
+                            <td>
+                                <a asp-controller="Speakers" asp-action="Edit" asp-route-id="@item.SpeakerID">Edit Name</a> |
+                                <a asp-controller="SpeakingAssignments" asp-action="Edit" asp-route-id="@item.SpeakingAssignmentID">Edit Topic</a> |
+                                <a asp-controller="SpeakingAssignments" asp-action="Delete" asp-route-id="@item.SpeakingAssignmentID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

@@ -76,7 +76,12 @@ namespace SacramentMeetingPlanner.Controllers
                 return NotFound();
             }
 
-            var meeting = await _context.Meetings.FindAsync(id);
+            //var meeting = await _context.Meetings.FindAsync(id);
+            var meeting = await _context.Meetings
+                .Include(s => s.SpeakingAssignments)
+                    .ThenInclude(e => e.Speaker)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (meeting == null)
             {
                 return NotFound();
