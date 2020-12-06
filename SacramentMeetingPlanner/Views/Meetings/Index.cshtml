@@ -34,6 +34,9 @@
             @Html.DisplayNameFor(model => model.Benediction)
         </th>*@
             <th>
+                # of Speakers
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Notes)
             </th>
             <th></th>
@@ -48,21 +51,24 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Conductor)
             </td>
-@*            <td>
-                @Html.DisplayFor(modelItem => item.OpeningHymn)
-            </td>
+            @*            <td>
+            @Html.DisplayFor(modelItem => item.OpeningHymn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Invocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SacramentHymn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClosingHymn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Benediction)
+        </td>*@
             <td>
-                @Html.DisplayFor(modelItem => item.Invocation)
+                @Html.DisplayFor(modelItem => item.SpeakingAssignments.Count)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SacramentHymn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClosingHymn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Benediction)
-            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Notes)
             </td>

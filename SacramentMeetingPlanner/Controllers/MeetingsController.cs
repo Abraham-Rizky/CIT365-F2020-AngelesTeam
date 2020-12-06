@@ -22,7 +22,9 @@ namespace SacramentMeetingPlanner.Controllers
         // GET: Meetings
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Meetings.ToListAsync());
+            //return View(await _context.Meetings.ToListAsync());
+            var meetingContext = _context.Meetings.Include(s => s.SpeakingAssignments).Include(s => s.Speakers);
+            return View(await meetingContext.ToListAsync());
         }
 
         // GET: Meetings/Details/5
@@ -61,7 +63,19 @@ namespace SacramentMeetingPlanner.Controllers
         {
             if (ModelState.IsValid)
             {
+                //string name = Request.Form["name"]
                 _context.Add(meeting);
+
+                Speaker speaker = new Speaker();
+                speaker.Name = Request.Form["Name"];
+                _context.Add(speaker);
+
+                SpeakingAssignment topic = new SpeakingAssignment();
+                topic.Topic = Request.Form["Topic"];
+                topic.MeetingID = meeting.ID;
+                topic.SpeakerID = speaker.ID;
+                _context.Add(topic);
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -106,6 +120,17 @@ namespace SacramentMeetingPlanner.Controllers
                 try
                 {
                     _context.Update(meeting);
+                    
+                    Speaker speaker = new Speaker();
+                    speaker.Name = Request.Form["Name"];
+                    _context.Add(speaker);
+
+                    SpeakingAssignment topic = new SpeakingAssignment();
+                    topic.Topic = Request.Form["Topic"];
+                    topic.MeetingID = meeting.ID;
+                    topic.SpeakerID = speaker.ID;
+                    _context.Add(topic);
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -132,7 +157,12 @@ namespace SacramentMeetingPlanner.Controllers
                 return NotFound();
             }
 
+            /*            var meeting = await _context.Meetings
+                            .FirstOrDefaultAsync(m => m.ID == id);*/
             var meeting = await _context.Meetings
+                .Include(s => s.SpeakingAssignments)
+                    .ThenInclude(e => e.Speaker)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (meeting == null)
             {

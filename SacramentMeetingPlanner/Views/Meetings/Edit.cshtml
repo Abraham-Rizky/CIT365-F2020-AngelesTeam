@@ -78,6 +78,9 @@
                     }
                 </table>
             </div>
+            <div id="divcontent" class="form-group">
+                <button type="button" class="btn btn-sm btn-success" onclick="AddTextBox()"><i class="fa fa-angle-right"></i> Add Speaker</button>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -88,6 +91,20 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+<script type="text/javascript">
+function GetDynamicTextBox(value) {
+    //return ('<hr/><label asp-controller="Speakers" asp-for="Name" class="control-label">Name</label><input asp-for="Name" class="form-control" /><br><label>Topic</label><input asp-for="Topic" class="form-control"/><br><button type="button" class="btn btn-sm btn-danger" onclick="RemoveTextBox(this)"><i class="fa fa-angle-right"></i> Remove Speaker</button>');
+    return (  '<hr><label class="control-label">Name</label><input name="Name" id="Name"class="form-control" required><br><label class="control-label">Topic</label><input name="Topic" id="Topic" class="form-control" required><br><button type="button" class="btn btn-sm btn-danger" onclick="RemoveTextBox(this)"><i class="fa fa-angle-right"></i> Cancel</button>');
+}
+function AddTextBox() {
+    var div = document.createElement('DIV');
+    div.innerHTML = GetDynamicTextBox("");
+    document.getElementById("divcontent").appendChild(div);
+}
+function RemoveTextBox(div) {
+    document.getElementById("divcontent").removeChild(div.parentNode);
+    }
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
