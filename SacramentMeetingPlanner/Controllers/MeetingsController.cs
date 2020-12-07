@@ -59,22 +59,23 @@ namespace SacramentMeetingPlanner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,MeetingDate,Conductor,OpeningHymn,Invocation,SacramentHymn,ClosingHymn,Benediction,Notes")] Meeting meeting)
+        public async Task<IActionResult> Create([Bind("ID,MeetingDate,Conductor,OpeningHymn,Invocation,SacramentHymn,ClosingHymn,Benediction,Notes")] Meeting meeting, Speaker speaker)
         {
             if (ModelState.IsValid)
             {
                 //string name = Request.Form["name"]
                 _context.Add(meeting);
 
-                Speaker speaker = new Speaker();
+                //Speaker speaker = new Speaker();
+
                 speaker.Name = Request.Form["Name"];
-                _context.Add(speaker);
+                _context.AddRange(speaker);
 
                 SpeakingAssignment topic = new SpeakingAssignment();
                 topic.Topic = Request.Form["Topic"];
                 topic.MeetingID = meeting.ID;
                 topic.SpeakerID = speaker.ID;
-                _context.Add(topic);
+                _context.AddRange(topic);
 
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

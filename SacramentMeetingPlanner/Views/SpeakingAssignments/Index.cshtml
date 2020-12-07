@@ -21,8 +21,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.Meeting)
             </th>
-            <th></th>
-        </tr>
+@*            <th></th>
+*@        </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
@@ -36,11 +36,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Meeting.MeetingDate)
             </td>
-            <td>
+@*            <td>
                 <a asp-action="Edit" asp-route-id="@item.SpeakingAssignmentID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.SpeakingAssignmentID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.SpeakingAssignmentID">Delete</a>
-            </td>
+            </td>*@
         </tr>
 }
     </tbody>
