@@ -79,7 +79,7 @@
                 </table>
             </div>
             <div id="divcontent" class="form-group">
-                <button type="button" class="btn btn-sm btn-success" onclick="AddTextBox();  this.disabled=true;"><i class="fa fa-angle-right"></i> Add Speaker</button>
+                <button type="button" id="addspeaker" class="btn btn-sm btn-success" onclick="AddTextBox();  this.disabled=true;"><i class="fa fa-angle-right"></i> Add Speaker</button>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -94,7 +94,7 @@
 <script type="text/javascript">
 function GetDynamicTextBox(value) {
     //return ('<hr/><label asp-controller="Speakers" asp-for="Name" class="control-label">Name</label><input asp-for="Name" class="form-control" /><br><label>Topic</label><input asp-for="Topic" class="form-control"/><br><button type="button" class="btn btn-sm btn-danger" onclick="RemoveTextBox(this)"><i class="fa fa-angle-right"></i> Remove Speaker</button>');
-    return (  '<hr><label class="control-label">Name</label><input name="Name" id="Name"class="form-control" required><br><label class="control-label">Topic</label><input name="Topic" id="Topic" class="form-control" required><br><button type="button" class="btn btn-sm btn-danger" onclick="RemoveTextBox(this)"><i class="fa fa-angle-right"></i> Cancel</button>');
+    return (  '<hr><label class="control-label">Name</label><input name="Name" id="Name"class="form-control" required><br><label class="control-label">Topic</label><input name="Topic" id="Topic" class="form-control" required><br><button type="button" class="btn btn-sm btn-danger" onclick="RemoveTextBox(this); document.getElementById(\'addspeaker\').disabled=false;"><i class="fa fa-angle-right"></i> Cancel</button>');
 }
 function AddTextBox() {
     var div = document.createElement('DIV');
