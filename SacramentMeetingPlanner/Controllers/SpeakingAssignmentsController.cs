@@ -27,10 +27,10 @@ namespace SacramentMeetingPlanner.Controllers
              int? pageNumber)
         {
             ViewData["CurrentSort"] = sortOrder;
-            ViewData["NameSortParm"] =
-                String.IsNullOrEmpty(sortOrder) ? "LastName_desc" : "";
+            ViewData["TopicSortParm"] =
+                String.IsNullOrEmpty(sortOrder) ? "Topic_desc" : "";
             ViewData["DateSortParm"] =
-                sortOrder == "EnrollmentDate" ? "EnrollmentDate_desc" : "EnrollmentDate";
+                sortOrder == "MeetingDate" ? "MeetingDate_desc" : "MeetingDate";
 
             if (searchString != null)
             {
@@ -51,9 +51,32 @@ namespace SacramentMeetingPlanner.Controllers
                 meetingContext = _context.SpeakingAssignments.Where(s => s.Topic.Contains(searchString)).Include(s => s.Meeting).Include(s => s.Speaker);
             }
 
+            if (string.IsNullOrEmpty(sortOrder))
+            {
+                sortOrder = "Topic";
+            }
+
+            bool descending = false;
+            if (sortOrder.EndsWith("_desc"))
+            {
+                sortOrder = sortOrder.Substring(0, sortOrder.Length - 5);
+                descending = true;
+            }
+
+            if (descending)
+            {
+                meetingContext = _context.SpeakingAssignments.OrderByDescending(e => e.Topic).Include(s => s.Meeting).Include(s => s.Speaker);
+            }
+            else
+            {
+                meetingContext = _context.SpeakingAssignments.OrderBy(e => e.Topic).Include(s => s.Meeting).Include(s => s.Speaker);
+            }
+
 
             //var meetingContext = _context.SpeakingAssignments.Include(s => s.Meeting).Include(s => s.Speaker);
-            return View(await meetingContext.ToListAsync());
+            return View(await meetingContext.AsNoTracking().ToListAsync());
+            //return View(await SpeakingAssignment.(meetingContext.AsNoTracking()));
+
         }
 
         // GET: SpeakingAssignments/Details/5

@@ -6,26 +6,17 @@
 
 <h1>Index</h1>
 
-<form asp-action="Index" method="get">
-    <div class="form-actions no-color">
-        <p>
-            Find by topic: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
-            <input type="submit" value="Search" class="btn btn-success" /> |
-            <a asp-action="Index">Back to Full List</a>
-        </p>
-    </div>
-</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Topic)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["TopicSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Topic</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Speaker)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Meeting)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Meeting Date</a>
             </th>
 @*            <th></th>
 *@        </tr>
