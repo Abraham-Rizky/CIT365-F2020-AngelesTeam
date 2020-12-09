@@ -20,9 +20,39 @@ namespace SacramentMeetingPlanner.Controllers
         }
 
         // GET: SpeakingAssignments
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(
+             string sortOrder,
+             string currentFilter,
+             string searchString,
+             int? pageNumber)
         {
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParm"] =
+                String.IsNullOrEmpty(sortOrder) ? "LastName_desc" : "";
+            ViewData["DateSortParm"] =
+                sortOrder == "EnrollmentDate" ? "EnrollmentDate_desc" : "EnrollmentDate";
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
             var meetingContext = _context.SpeakingAssignments.Include(s => s.Meeting).Include(s => s.Speaker);
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                meetingContext = _context.SpeakingAssignments.Where(s => s.Topic.Contains(searchString)).Include(s => s.Meeting).Include(s => s.Speaker);
+            }
+
+
+            //var meetingContext = _context.SpeakingAssignments.Include(s => s.Meeting).Include(s => s.Speaker);
             return View(await meetingContext.ToListAsync());
         }
 
