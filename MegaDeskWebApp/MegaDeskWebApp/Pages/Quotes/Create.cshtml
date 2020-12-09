@@ -13,28 +13,28 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Quote.CustomerName" class="control-label"></label>
-                <input asp-for="Quote.CustomerName" class="form-control" id="name" name="name" placeholder="John Doe"/>
+                <input asp-for="Quote.CustomerName" class="form-control" placeholder="John Doe"/>
                 <span asp-validation-for="Quote.CustomerName" class="text-danger">
                 </span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.Depth" class="control-label"></label>
-                <input asp-for="Quote.Depth" class="form-control"  name="depth" placeholder="12-48" />
+                <input asp-for="Quote.Depth" class="form-control" placeholder="12-48" />
                 <span asp-validation-for="Quote.Depth" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.Width" class="control-label"></label>
-                <input asp-for="Quote.Width" class="form-control" name="width" id="width" placeholder="24-96" />
+                <input asp-for="Quote.Width" class="form-control" placeholder="24-96" />
                 <span asp-validation-for="Quote.Width" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.DrawerCount" class="control-label"></label>
-                <input asp-for="Quote.DrawerCount" class="form-control"  name="drawercount" placeholder="0-7" />
+                <input asp-for="Quote.DrawerCount" class="form-control" placeholder="0-7" />
                 <span asp-validation-for="Quote.DrawerCount" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quote.DeskMaterial" class="control-label"></label>
-                <select asp-for="Quote.DeskMaterial" class="form-control"  name="material" onchange="Swap(this,'MyImg');">
+                <select asp-for="Quote.DeskMaterial" class="form-control" onchange="Swap(this,'MyImg');">
                     <option disabled selected> -- select an option -- </option>
                     <option value="1">Oak</option>
                     <option value="2">Laminate</option>
@@ -47,7 +47,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Quote.ShippingOption" class="control-label"></label>
-                <select asp-for="Quote.ShippingOption" class="form-control" name="shipping">
+                <select asp-for="Quote.ShippingOption" class="form-control">
                     <option disabled selected> -- select an option -- </option>
                     <option value="99">Standard 14 days</option>
                     <option value="0">3 days</option>

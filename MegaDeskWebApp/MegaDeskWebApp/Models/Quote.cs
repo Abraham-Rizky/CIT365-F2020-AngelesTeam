@@ -14,6 +14,7 @@ namespace MegaDeskWebApp.Models
 
         [StringLength(20, MinimumLength = 3)]
         [Display(Name = "Name")]
+        [RegularExpression(@"^([A-Za-z])$", ErrorMessage = "Please enter name.")]
         public string CustomerName { get; set; }
 
         [Display(Name = "Depth")]
@@ -26,6 +27,7 @@ namespace MegaDeskWebApp.Models
 
         [Display(Name = "Drawer Count")]
         [Range(0, 7)]
+        [RegularExpression(@"[1-7][0-9]*")]
         public int DrawerCount { get; set; }
 
         [Display(Name = "Material")]
