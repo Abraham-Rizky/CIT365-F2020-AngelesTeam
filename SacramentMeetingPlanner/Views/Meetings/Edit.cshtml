@@ -1,0 +1,111 @@
+﻿@model SacramentMeetingPlanner.Models.Meeting
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Meeting</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="MeetingDate" class="control-label"></label>
+                <input asp-for="MeetingDate" class="form-control" />
+                <span asp-validation-for="MeetingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Conductor" class="control-label"></label>
+                <input asp-for="Conductor" class="form-control" />
+                <span asp-validation-for="Conductor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpeningHymn" class="control-label"></label>
+                <input asp-for="OpeningHymn" class="form-control" />
+                <span asp-validation-for="OpeningHymn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Invocation" class="control-label"></label>
+                <input asp-for="Invocation" class="form-control" />
+                <span asp-validation-for="Invocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SacramentHymn" class="control-label"></label>
+                <input asp-for="SacramentHymn" class="form-control" />
+                <span asp-validation-for="SacramentHymn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClosingHymn" class="control-label"></label>
+                <input asp-for="ClosingHymn" class="form-control" />
+                <span asp-validation-for="ClosingHymn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Benediction" class="control-label"></label>
+                <input asp-for="Benediction" class="form-control" />
+                <span asp-validation-for="Benediction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <table class="table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Topic</th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model.SpeakingAssignments)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Speaker.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Topic)
+                            </td>
+                            <td>
+                                <a asp-controller="Speakers" asp-action="Edit" asp-route-id="@item.SpeakerID">Edit Name</a> |
+                                <a asp-controller="SpeakingAssignments" asp-action="Edit" asp-route-id="@item.SpeakingAssignmentID">Edit Topic</a> |
+                                <a asp-controller="SpeakingAssignments" asp-action="Delete" asp-route-id="@item.SpeakingAssignmentID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div id="divcontent" class="form-group">
+                <button type="button" id="addspeaker" class="btn btn-sm btn-success" onclick="AddTextBox();  this.disabled=true;"><i class="fa fa-angle-right"></i> Add Speaker</button>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script type="text/javascript">
+function GetDynamicTextBox(value) {
+    //return ('<hr/><label asp-controller="Speakers" asp-for="Name" class="control-label">Name</label><input asp-for="Name" class="form-control" /><br><label>Topic</label><input asp-for="Topic" class="form-control"/><br><button type="button" class="btn btn-sm btn-danger" onclick="RemoveTextBox(this)"><i class="fa fa-angle-right"></i> Remove Speaker</button>');
+    return (  '<hr><label class="control-label">Name</label><input name="Name" id="Name"class="form-control" required><br><label class="control-label">Topic</label><input name="Topic" id="Topic" class="form-control" required><br><button type="button" class="btn btn-sm btn-danger" onclick="RemoveTextBox(this); document.getElementById(\'addspeaker\').disabled=false;"><i class="fa fa-angle-right"></i> Cancel</button>');
+}
+function AddTextBox() {
+    var div = document.createElement('DIV');
+    div.innerHTML = GetDynamicTextBox("");
+    document.getElementById("divcontent").appendChild(div);
+}
+function RemoveTextBox(div) {
+    document.getElementById("divcontent").removeChild(div.parentNode);
+    }
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

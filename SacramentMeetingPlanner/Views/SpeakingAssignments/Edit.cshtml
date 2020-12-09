@@ -1,0 +1,44 @@
+﻿@model SacramentMeetingPlanner.Models.SpeakingAssignment
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>SpeakingAssignment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SpeakingAssignmentID" />
+            <div class="form-group">
+@*                <label asp-for="MeetingID" class="control-label"></label>
+*@                <input type="hidden" asp-for="MeetingID" class="form-control" asp-items="ViewBag.MeetingID"/>
+                <span asp-validation-for="MeetingID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+@*                <label asp-for="SpeakerID" class="control-label"></label>
+*@                <input type="hidden" asp-for="SpeakerID" class="form-control" asp-items="ViewBag.SpeakerID"/>
+                <span asp-validation-for="SpeakerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Topic" class="control-label"></label>
+                <input asp-for="Topic" class="form-control" />
+                <span asp-validation-for="Topic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href='javascript:history.go(-1)'>Go Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -12,29 +12,31 @@ namespace MegaDeskWebApp.Models
     {
         public int ID { get; set; }
 
-        [StringLength(20, MinimumLength = 3)]
+        [Required(ErrorMessage ="Please Enter your name")]
+        [RegularExpression(@"^([A-Za-z]{3,50}|([A-Za-z]+\s[A-Za-z]+))$", ErrorMessage = "Please enter your first name or full name (first and last) with letters only.")]
         [Display(Name = "Name")]
-        [RegularExpression(@"^([A-Za-z])$", ErrorMessage = "Please enter name.")]
         public string CustomerName { get; set; }
 
         [Display(Name = "Depth")]
-        [Range(12, 48)]
+        [Range(12, 48, ErrorMessage = "Please enter a number between 12 and 48")]
         public int Depth { get; set; }
 
         [Display(Name = "Width")]
-        [Range(24,96)]
+        [Range(24,96, ErrorMessage = "Please enter a number between 24 and 96")]
         public int Width { get; set; }
 
         [Display(Name = "Drawer Count")]
-        [Range(0, 7)]
-        [RegularExpression(@"[1-7][0-9]*")]
+        [Range(0, 7, ErrorMessage = "Please select a number between 0 and 7")]
         public int DrawerCount { get; set; }
 
+        [Required(ErrorMessage = "Please select a Material")]
         [Display(Name = "Material")]
         public string DeskMaterial { get; set; }
-
+        
+        [Required(ErrorMessage = "Please select a Shipping Option")]
         [Display(Name = "Shipping")]
         public string ShippingOption { get; set; }
+
 
         [Display(Name = "Date")]
         [DataType(DataType.Date)]

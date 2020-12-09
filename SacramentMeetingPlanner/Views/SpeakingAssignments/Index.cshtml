@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SacramentMeetingPlanner.Models.SpeakingAssignment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["TopicSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Topic</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speaker)
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Meeting Date</a>
+            </th>
+@*            <th></th>
+*@        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speaker.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Meeting.MeetingDate)
+            </td>
+@*            <td>
+                <a asp-action="Edit" asp-route-id="@item.SpeakingAssignmentID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SpeakingAssignmentID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SpeakingAssignmentID">Delete</a>
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>
