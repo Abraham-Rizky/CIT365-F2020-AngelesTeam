@@ -16,7 +16,7 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .table-shadow {
-    box-shadow: 0px 5px 8px #888888;
+    box-shadow: 0px 5px 8px #CECECE;
 }
 
 svg a:hover polygon {
