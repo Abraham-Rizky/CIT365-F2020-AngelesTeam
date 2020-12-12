@@ -13,7 +13,7 @@ namespace MegaDeskWebApp.Models
         public int ID { get; set; }
 
         [Required(ErrorMessage ="Please Enter your name")]
-        [RegularExpression(@"^([A-Za-z]{3,50}|([A-Za-z]+\s[A-Za-z]+))$", ErrorMessage = "Please enter your first name or full name (first and last) with letters only.")]
+        [RegularExpression(@"^([A-Za-z]+\s[A-Za-z]+)$", ErrorMessage = "Please enter your first name or full name (first and last) with letters only.")]
         [Display(Name = "Name")]
         public string CustomerName { get; set; }
 
