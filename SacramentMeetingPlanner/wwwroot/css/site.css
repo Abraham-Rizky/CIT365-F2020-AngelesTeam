@@ -1,13 +1,21 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+:root {
+    --navbar-back-color: #37373D;
+    --navbar-font-color: #FFFDF1;
+    --main-back: #fffded;
+    --wood-brown: #bf6f50;
+    --wood-brown-hover: #c29685;
+}
+
 .background-image {
     height: 100%;
     width: 100%;
 }
 
 .bgd-hex {
-    fill: #E8E8E8;
+    fill: var(--wood-brown);
 }
 
 .hex-center {
@@ -22,13 +30,18 @@ for details on configuring this project to bundle and minify static web assets. 
 svg a:hover polygon {
     stroke-width: 1;
     stroke: black;
-    fill: #CECECE;
+    fill: var(--wood-brown-hover);
 }
 
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+}
+
+.header-colors {
+    background-color: var(--navbar-back-color);
+    color: var(--navbar-font-color);
 }
 
 /* Sticky footer styles
@@ -56,6 +69,10 @@ html {
 button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
+}
+
+.body-color {
+    background-color: var(--main-back);
 }
 
 /* Sticky footer styles
