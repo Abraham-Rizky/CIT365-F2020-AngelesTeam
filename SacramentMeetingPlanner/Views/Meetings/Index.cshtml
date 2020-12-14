@@ -10,7 +10,7 @@
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table table-shadow">
-    <thead>
+    <thead class="header-color">
         <tr>
             <th>
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Meeting Date</a>
@@ -34,7 +34,7 @@
             @Html.DisplayNameFor(model => model.Benediction)
         </th>*@
             <th>
-                # of Speakers
+                Number of Speakers
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Notes)
