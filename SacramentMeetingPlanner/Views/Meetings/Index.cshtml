@@ -9,11 +9,11 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-shadow">
+    <thead class="header-color">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.MeetingDate)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Meeting Date</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Conductor)
@@ -34,7 +34,7 @@
             @Html.DisplayNameFor(model => model.Benediction)
         </th>*@
             <th>
-                # of Speakers
+                Number of Speakers
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Notes)

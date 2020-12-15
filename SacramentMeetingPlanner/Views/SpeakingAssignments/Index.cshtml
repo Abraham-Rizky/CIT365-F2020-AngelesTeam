@@ -6,20 +6,17 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+<table class="table table-shadow">
+    <thead class="header-color">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Topic)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["TopicSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Topic</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Speaker)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Meeting)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Meeting Date</a>
             </th>
 @*            <th></th>
 *@        </tr>

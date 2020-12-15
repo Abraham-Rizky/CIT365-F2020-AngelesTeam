@@ -20,10 +20,65 @@ namespace SacramentMeetingPlanner.Controllers
         }
 
         // GET: SpeakingAssignments
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(
+             string sortOrder,
+             string currentFilter,
+             string searchString,
+             int? pageNumber)
         {
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["TopicSortParm"] =
+                String.IsNullOrEmpty(sortOrder) ? "Topic_desc" : "";
+            ViewData["DateSortParm"] =
+                sortOrder == "MeetingDate" ? "MeetingDate_desc" : "MeetingDate";
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
             var meetingContext = _context.SpeakingAssignments.Include(s => s.Meeting).Include(s => s.Speaker);
-            return View(await meetingContext.ToListAsync());
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                meetingContext = _context.SpeakingAssignments.Where(s => s.Topic.Contains(searchString)).Include(s => s.Meeting).Include(s => s.Speaker);
+            }
+
+            if (string.IsNullOrEmpty(sortOrder))
+            {
+                sortOrder = "Topic";
+            }
+
+            bool descending = false;
+
+            if (sortOrder.EndsWith("_desc"))
+            {
+                sortOrder = sortOrder.Substring(0, sortOrder.Length - 5);
+                descending = true;
+            }
+
+
+            if (descending)
+            {
+                meetingContext = _context.SpeakingAssignments.OrderByDescending(e => e.Topic).Include(s => s.Meeting).Include(s => s.Speaker);
+            }
+            else
+            {
+                meetingContext = _context.SpeakingAssignments.OrderBy(e => e.Topic).Include(s => s.Meeting).Include(s => s.Speaker);
+            }
+
+
+            //var meetingContext = _context.SpeakingAssignments.Include(s => s.Meeting).Include(s => s.Speaker);
+            return View(await meetingContext.AsNoTracking().ToListAsync());
+            //return View(await SpeakingAssignment.(meetingContext.AsNoTracking()));
+
         }
 
         // GET: SpeakingAssignments/Details/5
