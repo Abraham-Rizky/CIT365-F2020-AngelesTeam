@@ -4,12 +4,50 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<!--<h1>Details</h1>-->
 
 <div>
-    <h4>Meeting</h4>
-    <hr />
-    <dl class="row">
+    <h4 class="center-for-print">Whitney Ranch Ward Sacrament Meeting</h4>
+    <h5 class="center-for-print">@Convert.ToDateTime(Model.MeetingDate).ToString("MMMM d, yyyy")</h5>
+    <hr class="center-for-print" />
+    <ul class="for-print leaders">
+        <li class="mb-4 mt-3">
+            <span>@Html.DisplayNameFor(model => model.Conductor)</span>
+            <span>@Html.DisplayFor(model => model.Conductor)</span>
+        </li>
+        <li class="mb-4">
+            <span>@Html.DisplayNameFor(model => model.OpeningHymn)</span>
+            <span>@Html.DisplayFor(model => model.OpeningHymn)</span>
+        </li>
+        <li class="mb-4">
+            <span>@Html.DisplayNameFor(model => model.Invocation)</span>
+            <span>@Html.DisplayFor(model => model.Invocation)</span>
+        </li>
+        <div class="mb-4 center-for-print">Ward Business</div>
+        <li class="mb-4">
+            <span>@Html.DisplayNameFor(model => model.SacramentHymn)</span>
+            <span>@Html.DisplayFor(model => model.SacramentHymn)</span>
+        </li>
+        <div class="mb-4 center-for-print">Passing of the Sacrament by the Aaronic Priesthood</div>
+
+        @foreach (var item in Model.SpeakingAssignments)
+        {
+            <li class="mb-4">
+                <span>Talk on @Html.DisplayFor(modelItem => item.Topic)</span>
+                <span>@Html.DisplayFor(modelItem => item.Speaker.Name)</span>
+            </li>
+        }
+
+        <li class="mb-4">
+            <span>@Html.DisplayNameFor(model => model.ClosingHymn)</span>
+            <span>@Html.DisplayFor(model => model.ClosingHymn)</span>
+        </li>
+        <li class="mb-4">
+            <span>@Html.DisplayNameFor(model => model.Benediction)</span>
+            <span>@Html.DisplayNameFor(model => model.Benediction)</span>
+        </li>
+    </ul>
+    <dl class="row no-print">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.MeetingDate)
         </dt>
@@ -82,7 +120,7 @@
         </dd>
     </dl>
 </div>
-<div>
+<div class="no-print">
     <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
