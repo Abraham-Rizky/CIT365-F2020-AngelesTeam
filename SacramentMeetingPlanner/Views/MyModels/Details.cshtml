@@ -1,0 +1,126 @@
+﻿@model SacramentMeetingPlanner.Models.MyModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MyModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.artist)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.artist)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.book)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.book)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bookFilter)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bookFilter)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.collectionFilter)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.collectionFilter)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.url)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.url)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.alturl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.alturl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mp3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mp3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.playerlink)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.playerlink)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pdf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pdf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.video1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.video1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.video2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.video2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.showAsterisk)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.showAsterisk)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hasDownload)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hasDownload)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.midi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.midi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.songid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.songid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.songNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.songNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.detailColumn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.detailColumn)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

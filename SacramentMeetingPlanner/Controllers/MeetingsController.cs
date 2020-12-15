@@ -100,18 +100,6 @@ namespace SacramentMeetingPlanner.Controllers
         {
             if (ModelState.IsValid)
             {
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                    WriteIndented = true
-                };
-
-                StreamReader sr = new StreamReader("../../Data/hymns.json");
-                string jsonString = sr.ReadToEnd();
-                var jsonModel = System.Text.Json.JsonSerializer.Deserialize<MyModel>(jsonString, options);
-                var modelJson = System.Text.Json.JsonSerializer.Serialize(jsonModel, options);
-                ViewData["data"] = modelJson;
-
                 _context.Add(meeting);
 
                 speaker.Name = Request.Form["Name"];

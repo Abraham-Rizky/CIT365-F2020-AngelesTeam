@@ -1,6 +1,10 @@
-﻿using SacramentMeetingPlanner.Models;
+﻿using Newtonsoft.Json;
+using SacramentMeetingPlanner.Models;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 
 namespace SacramentMeetingPlanner.Data
 {
@@ -50,6 +54,26 @@ namespace SacramentMeetingPlanner.Data
                 context.SpeakingAssignments.Add(e);
             }
             context.SaveChanges();
+
+
+            StreamReader sr = new StreamReader("../Data/hymns.json");
+            string jsonString = sr.ReadToEnd();
+            List<MyModel> myModels = JsonConvert.DeserializeObject<List<MyModel>>(jsonString);
+
+            /*            var myModels = new MyModel[]
+                        {
+                        new MyModel{name = "The Morning Breaks" },
+                        new MyModel{ name = "The Spirit of God" },
+                        };*/
+            
+            foreach (MyModel e in myModels)
+            {
+  
+                new MyModel {name = e.name };
+                context.MyModel.Add(e);
+            }
+            context.SaveChanges();
+
         }
     }
 }
