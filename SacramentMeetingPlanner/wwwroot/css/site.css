@@ -1,6 +1,9 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+@import url('https://fonts.googleapis.com/css2?family=Life+Savers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Galindo&family=Life+Savers&display=swap');
+
 :root {
     --navbar-back-color: #37373D;
     --navbar-font-color: #FFFDF1;
@@ -10,6 +13,25 @@ for details on configuring this project to bundle and minify static web assets. 
     --header-color: #EBCF9D;
     --link-color: #865543;
     --link-hover-color: #4B7644;
+}
+
+.main-font {
+    font-family: 'Galindo', cursive;
+    font-size: 65px;
+}
+
+.secondary-font {
+    font-family: 'Life Savers', cursive;
+    font-size: 44px;
+}
+
+.heading-font {
+    font-family: 'Galindo', cursive;
+    font-size: 45px;
+}
+
+.create-font {
+    font-size: 20px;
 }
 
 .background-image {

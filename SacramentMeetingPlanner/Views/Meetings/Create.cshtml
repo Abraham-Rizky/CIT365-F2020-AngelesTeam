@@ -4,16 +4,15 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Meeting</h4>
+<h1 class="heading-font">Whitney Ranch Ward</h1>
+<h2>Meeting builder</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="MeetingDate" class="control-label"></label>
+                <label asp-for="MeetingDate" class="control-label">Date</label>
                 <input asp-for="MeetingDate" class="form-control" />
                 <span asp-validation-for="MeetingDate" class="text-danger"></span>
             </div>
