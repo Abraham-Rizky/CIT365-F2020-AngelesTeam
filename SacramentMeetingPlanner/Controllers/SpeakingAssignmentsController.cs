@@ -75,9 +75,7 @@ namespace SacramentMeetingPlanner.Controllers
             }
 
 
-            //var meetingContext = _context.SpeakingAssignments.Include(s => s.Meeting).Include(s => s.Speaker);
             return View(await meetingContext.AsNoTracking().ToListAsync());
-            //return View(await SpeakingAssignment.(meetingContext.AsNoTracking()));
 
         }
 
