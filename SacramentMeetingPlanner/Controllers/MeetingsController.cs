@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -99,6 +100,17 @@ namespace SacramentMeetingPlanner.Controllers
         {
             if (ModelState.IsValid)
             {
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                    WriteIndented = true
+                };
+
+                StreamReader sr = new StreamReader("../../Data/hymns.json");
+                string jsonString = sr.ReadToEnd();
+                var jsonModel = System.Text.Json.JsonSerializer.Deserialize<MyModel>(jsonString, options);
+                var modelJson = System.Text.Json.JsonSerializer.Serialize(jsonModel, options);
+                ViewData["data"] = modelJson;
 
                 _context.Add(meeting);
 

@@ -47,5 +47,7 @@ namespace SacramentMeetingPlanner.Models
         
         public ICollection<Speaker> Speakers { get; set; }
 
+        public ICollection<MyModel> MyModels { get; set; }
+
     }
 }
