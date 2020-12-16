@@ -44,7 +44,7 @@
         </li>
         <li class="mb-4">
             <span>@Html.DisplayNameFor(model => model.Benediction)</span>
-            <span>@Html.DisplayNameFor(model => model.Benediction)</span>
+            <span>@Html.DisplayFor(model => model.Benediction)</span>
         </li>
     </ul>
     <dl class="row no-print">
@@ -124,3 +124,4 @@
     <a asp-action="Edit" asp-route-id="@Model.ID">Make Changes</a> |
     <a asp-action="Index">Back to List</a> | 
     <a href="#" onclick="window.print();return false;">Print Program</a>
+</div>

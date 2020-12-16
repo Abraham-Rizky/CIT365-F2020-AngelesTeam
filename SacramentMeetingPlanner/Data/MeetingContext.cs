@@ -20,5 +20,7 @@ namespace SacramentMeetingPlanner.Data
             modelBuilder.Entity<Meeting>().ToTable("Meeting");
             modelBuilder.Entity<SpeakingAssignment>().ToTable("SpeakingAssignment");
         }
+
+        public DbSet<SacramentMeetingPlanner.Models.MyModel> MyModel { get; set; }
     }
 }

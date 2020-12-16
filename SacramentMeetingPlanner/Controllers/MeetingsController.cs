@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using SacramentMeetingPlanner.Data;
 using SacramentMeetingPlanner.Models;
 
@@ -96,10 +100,7 @@ namespace SacramentMeetingPlanner.Controllers
         {
             if (ModelState.IsValid)
             {
-                //string name = Request.Form["name"]
                 _context.Add(meeting);
-
-                //Speaker speaker = new Speaker();
 
                 speaker.Name = Request.Form["Name"];
                 _context.AddRange(speaker);
@@ -154,7 +155,7 @@ namespace SacramentMeetingPlanner.Controllers
                 try
                 {
                     _context.Update(meeting);
-                    
+
                     Speaker speaker = new Speaker();
                     speaker.Name = Request.Form["Name"];
                     _context.Add(speaker);
@@ -221,5 +222,25 @@ namespace SacramentMeetingPlanner.Controllers
         {
             return _context.Meetings.Any(e => e.ID == id);
         }
+        public JObject ReadJSONData(string jsonFilename)
+        {
+            try
+            {
+                JObject jObject;
+                // Read JSON directly from a file    
+                using (StreamReader file = System.IO.File.OpenText(jsonFilename))
+                using (JsonTextReader reader = new JsonTextReader(file))
+                {
+                    jObject = (JObject)JToken.ReadFrom(reader);
+                }
+                return jObject;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error Occurred : " + ex.Message);
+                return null;
+            }
+        }
+
     }
 }
