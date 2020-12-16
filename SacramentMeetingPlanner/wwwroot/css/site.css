@@ -54,7 +54,7 @@ for details on configuring this project to bundle and minify static web assets. 
 
 svg a:hover polygon {
     stroke-width: 1;
-    stroke: black;
+    stroke: var(--wood-brown);
     fill: var(--wood-brown-hover);
 }
 
